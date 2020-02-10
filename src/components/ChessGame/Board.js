@@ -16,7 +16,7 @@ import { Square } from "./styled";
 import Piece from "./Piece";
 import BOARD from "./board.json";
 
-const makeSquareElement = ({ square, piece }) => (
+const renderSquare = ({ square, piece }) => (
   <Square
     color={square.color}
     x={square.x}
@@ -27,17 +27,21 @@ const makeSquareElement = ({ square, piece }) => (
   </Square>
 );
 
+const orderSquaresForDisplay = pipe(
+  reverse,
+  splitEvery(8),
+  map(reverse),
+  flatten
+);
+
 const Board = ({ squares, pieces }) =>
   pipe(
     map(square => ({
       square,
       piece: pieces.length ? getPieceAtSquare(square, pieces) : null
     })),
-    map(makeSquareElement),
-    reverse,
-    splitEvery(8),
-    map(reverse),
-    flatten
+    map(renderSquare),
+    orderSquaresForDisplay
   )(squares);
 
 const getPieceAtSquare = curry((square, pieces) =>
