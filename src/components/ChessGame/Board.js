@@ -16,22 +16,24 @@ import { Square } from "./styled";
 import Piece from "./Piece";
 import BOARD from "./board.json";
 
+const makeSquareElement = ({ square, piece }) => (
+  <Square
+    color={square.color}
+    x={square.x}
+    y={square.y}
+    key={`${square.x}${square.y}`}
+  >
+    {piece}
+  </Square>
+);
+
 const Board = ({ squares, pieces }) =>
   pipe(
     map(square => ({
       square,
       piece: pieces.length ? getPieceAtSquare(square, pieces) : null
     })),
-    map(({ square, piece }) => (
-      <Square
-        color={square.color}
-        x={square.x}
-        y={square.y}
-        key={`${square.x}${square.y}`}
-      >
-        {piece}
-      </Square>
-    )),
+    map(makeSquareElement),
     reverse,
     splitEvery(8),
     map(reverse),
