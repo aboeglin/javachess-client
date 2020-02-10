@@ -29,14 +29,22 @@ export const Square = styled.div`
   box-shadow: inset 0px 0px 26px 5px rgba(0, 0, 0, 0.4);
 
   img {
-    // width: 40px;
     height: 60px;
     position: absolute;
     display: block;
     bottom: 10px;
     left: 50%;
     transform: translateX(-50%);
+    // box-shadow: 0px 0px 114px 40px rgba(255, 255, 255, 1);
+    // box-shadow: inset 0px 0px 114px 40px rgba(255, 255, 255, 1);
   }
+`;
+
+export const SquareLabel = styled.div`
+  color: ${props => (props.color === "WHITE" ? BLACK : WHITE)};
+  opacity: 0.3;
+  margin-left: 5px;
+  margin-top: 5px;
 `;
 
 export const PieceContainer = styled.div`
