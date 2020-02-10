@@ -16,7 +16,7 @@ export const Container = styled.div`
 `;
 
 export const Square = styled.div`
-  background-color: ${props => (props.color === "WHITE" ? "white" : "#555")};
+  background-color: ${props => (props.color === "WHITE" ? "#ddd" : "#444")};
   position: relative;
   display: inline-block;
   width: ${SQUARE_WIDTH};

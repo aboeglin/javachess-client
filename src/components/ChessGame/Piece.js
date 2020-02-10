@@ -10,7 +10,7 @@ import BLACK_KNIGHT_IMAGE_URL from "./images/knight-black.png";
 import BLACK_ROOK_IMAGE_URL from "./images/rook-black.png";
 import BLACK_QUEEN_IMAGE_URL from "./images/queen-black.png";
 import BLACK_KING_IMAGE_URL from "./images/king-black.png";
-import WHITE_PAWN_IMAGE_URL from "./images/pawn-black.png";
+import WHITE_PAWN_IMAGE_URL from "./images/pawn-white.png";
 import WHITE_BISHOP_IMAGE_URL from "./images/bishop-white.png";
 import WHITE_KNIGHT_IMAGE_URL from "./images/knight-white.png";
 import WHITE_ROOK_IMAGE_URL from "./images/rook-white.png";
