@@ -16,12 +16,16 @@ export const Container = styled.div`
 `;
 
 export const Square = styled.div`
-  background-color: ${props => (props.color === "WHITE" ? "white" : "black")};
+  background-color: ${props => (props.color === "WHITE" ? "white" : "#555")};
   position: relative;
   display: inline-block;
   width: ${SQUARE_WIDTH};
   height: ${SQUARE_HEIGHT};
   margin: 0;
+
+  img {
+    max-width: 100%;
+  }
 `;
 
 export const PieceContainer = styled.div`
