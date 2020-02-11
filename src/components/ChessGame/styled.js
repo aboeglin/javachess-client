@@ -26,7 +26,7 @@ export const Square = styled.div`
   margin: 0;
 
   background-color: ${props => (props.color === "WHITE" ? WHITE : BLACK)};
-  box-shadow: inset 0px 0px 26px 5px rgba(0, 0, 0, 0.4);
+  box-shadow: inset 0px 0px 26px 5px rgba(0, 0, 0, 0.2);
 `;
 
 export const SquareLabel = styled.div`
