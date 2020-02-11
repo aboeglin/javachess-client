@@ -12,7 +12,7 @@ import {
   ifElse,
   identity
 } from "ramda";
-import { Square } from "./styled";
+import { Square, SquareLabel } from "./styled";
 import Piece from "./Piece";
 import BOARD from "./board.json";
 
@@ -23,7 +23,13 @@ const renderSquare = ({ square, piece }) => (
     y={square.y}
     key={`${square.x}${square.y}`}
   >
-    {piece}
+    {[
+      <SquareLabel color={square.color}>
+        {square.x}
+        {square.y}
+      </SquareLabel>,
+      piece
+    ]}
   </Square>
 );
 
