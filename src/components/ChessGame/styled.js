@@ -57,7 +57,6 @@ export const PieceContainer = styled.div`
     bottom: 5px;
     left: 50%;
     transform: ${props => {
-      console.log(props);
       switch (props.x) {
         case "a":
         case "b":
