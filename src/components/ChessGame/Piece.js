@@ -37,7 +37,7 @@ const Piece = props =>
   pipe(
     ({ type, color }) => getImageUrl(type, color),
     url => (
-      <PieceContainer>
+      <PieceContainer type={props.type} x={props.x}>
         <img src={url} />
       </PieceContainer>
     )

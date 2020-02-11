@@ -27,17 +27,6 @@ export const Square = styled.div`
 
   background-color: ${props => (props.color === "WHITE" ? WHITE : BLACK)};
   box-shadow: inset 0px 0px 26px 5px rgba(0, 0, 0, 0.4);
-
-  img {
-    height: 60px;
-    position: absolute;
-    display: block;
-    bottom: 10px;
-    left: 50%;
-    transform: translateX(-50%);
-    // box-shadow: 0px 0px 114px 40px rgba(255, 255, 255, 1);
-    // box-shadow: inset 0px 0px 114px 40px rgba(255, 255, 255, 1);
-  }
 `;
 
 export const SquareLabel = styled.div`
@@ -49,4 +38,35 @@ export const SquareLabel = styled.div`
 
 export const PieceContainer = styled.div`
   height: 100%;
+
+  img {
+    height: ${props => {
+      switch (props.type) {
+        case "QUEEN":
+        case "KING":
+        case "BISHOP":
+        case "ROOK":
+        case "KNIGHT":
+          return "65px";
+        default:
+          return "55px";
+      }
+    }};
+    position: absolute;
+    display: block;
+    bottom: 5px;
+    left: 50%;
+    transform: ${props => {
+      console.log(props);
+      switch (props.x) {
+        case "a":
+        case "b":
+        case "c":
+        case "d":
+          return "translateX(-50%) scaleX(-1)";
+        default:
+          return "translateX(-50%)";
+      }
+    }};
+  }
 `;
