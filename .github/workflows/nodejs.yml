@@ -3,7 +3,7 @@ name: Main
 on: [push]
 
 jobs:
-  build:
+  test:
     runs-on: ubuntu-latest
 
     strategy:
@@ -19,3 +19,7 @@ jobs:
       - run: npm install
       - run: ./node_modules/.bin/nps test.unit
       - run: ./node_modules/.bin/nps lint
+      - name: Coveralls
+        uses: coverallsapp/github-action@master
+        with:
+          github-token: ${{ secrets.GITHUB_TOKEN }}
