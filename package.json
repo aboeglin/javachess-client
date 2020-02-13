@@ -88,6 +88,7 @@
     "lint-staged": ">=8",
     "micromatch": "^4.0.2",
     "modernizr": "^3.9.0",
+    "nps": "^5.9.12",
     "prettier": "^1.19.1",
     "react-markdown": "^4.2.2",
     "react-test-renderer": "^16.12.0"
