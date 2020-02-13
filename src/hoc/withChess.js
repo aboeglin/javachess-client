@@ -6,7 +6,8 @@ const withChess = Component => {
   const Chess = props => {
     const [state, setState] = useState({
       pieces: [],
-      possibleMoves: []
+      possibleMoves: [],
+      selection: null
     });
     const chess = useContext(ChessContext);
 
@@ -18,8 +19,10 @@ const withChess = Component => {
       <Component
         {...props}
         pieces={state.pieces}
+        selection={state.selection}
         possibleMoves={state.possibleMoves}
         pieceSelected={chess.pieceSelected}
+        pieceMoved={chess.pieceMoved}
       />
     );
   };

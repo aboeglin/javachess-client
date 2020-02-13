@@ -9,12 +9,15 @@ const createChess = () => {
   const socket = new SockJS("http://localhost:8080/ws");
   const ws = Stomp.over(socket);
 
+  ws.debug = null;
+
   let observers = [];
   let gameId = null;
 
   let state = {
     pieces: [],
-    possibleMoves: []
+    possibleMoves: [],
+    selection: null
   };
 
   ws.connect({}, () => {
@@ -32,7 +35,14 @@ const createChess = () => {
         `/queue/game/${gameId}/piece-moved`,
         pipe(prop("body"), body => {
           const newPieces = JSON.parse(body).game.board.pieces;
-          updateState({ pieces: newPieces });
+
+          // If move successful
+          updateState({
+            pieces: newPieces,
+            possibleMoves: [],
+            selection: null
+          });
+          // Else API should return MoveError and we should keep the possible moves
         })
       );
 
@@ -58,11 +68,20 @@ const createChess = () => {
     ws.send("/app/lfg", {}, JSON.stringify({ email: HARDCODED_EMAIL }));
   });
 
-  const pieceSelected = (x, y) => {
+  const pieceSelected = piece => {
+    updateState({ selection: piece });
     ws.send(
       `/app/game/${gameId}/select-piece`,
       {},
-      JSON.stringify({ email: HARDCODED_EMAIL, x, y })
+      JSON.stringify({ email: HARDCODED_EMAIL, x: piece.x, y: piece.y })
+    );
+  };
+
+  const pieceMoved = (fromX, fromY, toX, toY) => {
+    ws.send(
+      `/app/game/${gameId}/perform-move`,
+      {},
+      JSON.stringify({ email: HARDCODED_EMAIL, fromX, fromY, toX, toY })
     );
   };
 
@@ -79,7 +98,8 @@ const createChess = () => {
 
   return {
     onStateChanged,
-    pieceSelected
+    pieceSelected,
+    pieceMoved
   };
 };
 

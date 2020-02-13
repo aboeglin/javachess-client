@@ -1,0 +1,19 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders <SquareContainer /> 1`] = `
+<div
+  className="css-1495z7x"
+  color="WHITE"
+  onClick={[Function]}
+  x="b"
+  y="3"
+>
+  <div
+    className="css-1nwny1d"
+    color="WHITE"
+  >
+    b
+    3
+  </div>
+</div>
+`;

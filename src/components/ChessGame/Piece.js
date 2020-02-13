@@ -34,18 +34,18 @@ const getImageUrl = (type, color) =>
     WHITE_KING: WHITE_KING_IMAGE_URL
   }[`${color}_${type}`]);
 
-export const Piece = props =>
+export const Piece = ({ piece, pieceSelected }) =>
   pipe(
     ({ type, color }) => getImageUrl(type, color),
     url => (
       <PieceContainer
-        type={props.type}
-        x={props.x}
-        onClick={() => props.pieceSelected(props.x, props.y)} // move that handler out of jsx
+        type={piece.type}
+        x={piece.x}
+        onClick={() => pieceSelected(piece)} // move that handler out of jsx
       >
         <img src={url} />
       </PieceContainer>
     )
-  )(props);
+  )(piece);
 
 export default withChess(Piece);

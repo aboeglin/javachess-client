@@ -2,9 +2,10 @@
 
 exports[`renders <Piece /> 1`] = `
 <div
-  className="css-r5lzjs"
+  className="css-132xnrr"
   onClick={[Function]}
   type="PAWN"
+  x="a"
 >
   <img
     src={Object {}}
