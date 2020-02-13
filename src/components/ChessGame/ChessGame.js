@@ -2,12 +2,17 @@ import React from "react";
 
 import { Container } from "./styled";
 import Board from "./Board";
-import withChess from "../../hoc/withChess";
+import ChessContext from "../../hooks/chess-context";
+import createChess from "../../utils/createChess";
 
-export const ChessGame = ({ pieces }) => (
+const chessStore = createChess();
+
+export const ChessGame = () => (
   <Container>
-    <Board pieces={pieces} />
+    <ChessContext.Provider value={chessStore}>
+      <Board />
+    </ChessContext.Provider>
   </Container>
 );
 
-export default withChess(ChessGame);
+export default ChessGame;
