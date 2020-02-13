@@ -15,23 +15,28 @@ import {
 import { Square, SquareLabel } from "./styled";
 import Piece from "./Piece";
 import BOARD from "./board.json";
+import withChess from "../../hoc/withChess";
 
-const renderSquare = ({ square, piece }) => (
+// Move to separate file
+const SquareContainer = ({ square, piece }) => (
   <Square
     color={square.color}
     x={square.x}
     y={square.y}
     key={`${square.x}${square.y}`}
   >
-    {[
-      <SquareLabel color={square.color}>
-        {square.x}
-        {square.y}
-      </SquareLabel>,
-      piece
-    ]}
+    <SquareLabel color={square.color}>
+      {square.x}
+      {square.y}
+    </SquareLabel>
+    {piece}
   </Square>
 );
+
+SquareContainer.propTypes = {
+  square: PropTypes.object,
+  piece: PropTypes.object
+};
 
 const orderSquaresForDisplay = pipe(
   reverse,
@@ -48,7 +53,7 @@ const addPiece = curry((pieces, square) => ({
 const Board = ({ squares, pieces }) =>
   pipe(
     map(addPiece(pieces)),
-    map(renderSquare),
+    map(SquareContainer),
     orderSquaresForDisplay
   )(squares);
 
@@ -65,7 +70,8 @@ Board.propTypes = {
 };
 
 Board.defaultProps = {
-  squares: BOARD.squares
+  squares: BOARD.squares,
+  pieces: []
 };
 
-export default Board;
+export default withChess(Board);

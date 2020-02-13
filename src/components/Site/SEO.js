@@ -1,7 +1,7 @@
-import React from 'react'
-import PropTypes from 'prop-types'
-import { useStaticQuery, graphql } from 'gatsby'
-import Helmet from 'react-helmet'
+import React from "react";
+import PropTypes from "prop-types";
+import { useStaticQuery, graphql } from "gatsby";
+import Helmet from "react-helmet";
 
 const SEO = ({ location: { pathname }, pageContext: { frontmatter }, seo }) => {
   const {
@@ -19,23 +19,23 @@ const SEO = ({ location: { pathname }, pageContext: { frontmatter }, seo }) => {
         }
       }
     }
-  `)
+  `);
 
   const { name, basepath, title, description, keywords, type, image } = {
     ...siteMetadata,
     ...seo,
     ...frontmatter
-  }
+  };
 
-  const url = `${basepath}${pathname}`
+  const url = `${basepath}${pathname}`;
 
   return (
-    <Helmet titleTemplate={`%s • ${name}`} defaultTitle={name}>
+    <Helmet titleTemplate={name} defaultTitle={name}>
       <html lang="en" />
 
       <title>{title}</title>
       <meta name="description" content={description} />
-      <meta name="keywords" content={keywords.join(', ')} />
+      <meta name="keywords" content={keywords.join(", ")} />
 
       <link rel="canonical" href={url} />
 
@@ -47,8 +47,8 @@ const SEO = ({ location: { pathname }, pageContext: { frontmatter }, seo }) => {
       <meta property="og:url" content={url} />
       <script type="text/javascript" src="/modernizr.js" defer />
     </Helmet>
-  )
-}
+  );
+};
 
 SEO.propTypes = {
   location: PropTypes.shape({
@@ -66,11 +66,11 @@ SEO.propTypes = {
     type: PropTypes.string,
     image: PropTypes.string
   })
-}
+};
 
 SEO.defaultProps = {
   pageContext: {},
   seo: {}
-}
+};
 
-export { SEO }
+export { SEO };

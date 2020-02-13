@@ -67,6 +67,7 @@
     "@svgr/webpack": "^4.3.3",
     "babel-eslint": "^10.0.3",
     "babel-loader": "^8.0.6",
+    "clean-stack": "^2.2.0",
     "cross-env": "^6.0.3",
     "eslint": "^6.6.0",
     "eslint-config-airbnb": "^18.0.1",
@@ -79,15 +80,17 @@
     "eslint-plugin-prefer-object-spread": "^1.2.1",
     "eslint-plugin-prettier": "^3.1.1",
     "eslint-plugin-ramda": "^2.5.1",
-    "eslint-plugin-react": "^7.16.0",
+    "eslint-plugin-react": "^7.18.3",
     "gatsby-plugin-alias-imports": "^1.0.5",
     "gatsby-plugin-react-svg": "^2.1.2",
     "husky": ">=1",
+    "jest": "^25.1.0",
     "lint-staged": ">=8",
     "micromatch": "^4.0.2",
     "modernizr": "^3.9.0",
     "prettier": "^1.19.1",
-    "react-markdown": "^4.2.2"
+    "react-markdown": "^4.2.2",
+    "react-test-renderer": "^16.12.0"
   },
   "husky": {
     "hooks": {
