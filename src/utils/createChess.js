@@ -1,7 +1,7 @@
 import SockJS from "sockjs-client";
 import Stomp from "stompjs";
 
-import { pipe, prop } from "ramda";
+import { pipe, prop, append, forEach } from "ramda";
 
 const HARDCODED_EMAIL = "user@domain.tld";
 
@@ -9,7 +9,7 @@ const createChess = () => {
   const socket = new SockJS("http://localhost:8080/ws");
   const ws = Stomp.over(socket);
 
-  let emitStateChanged = null;
+  let observers = [];
   let gameId = null;
 
   let state = {
@@ -36,6 +36,14 @@ const createChess = () => {
         })
       );
 
+      ws.subscribe(
+        `/queue/game/${gameId}/possible-moves`,
+        pipe(prop("body"), body => {
+          const possibleMoves = JSON.parse(body).possibleMoves;
+          updateState({ possibleMoves: possibleMoves });
+        })
+      );
+
       ws.send(
         `/app/game/${gameId}/join`,
         {},
@@ -53,20 +61,19 @@ const createChess = () => {
   const pieceSelected = (x, y) => {
     ws.send(
       `/app/game/${gameId}/select-piece`,
+      {},
       JSON.stringify({ email: HARDCODED_EMAIL, x, y })
     );
   };
 
   const updateState = newState => {
     state = { ...state, ...newState };
-    if (emitStateChanged) {
-      emitStateChanged(state);
-    }
+    forEach(fn => fn(state))(observers);
   };
 
+  // Store array of handlers, otherwise only the last one can get notified from state changed
   const onStateChanged = fn => {
-    console.log(state);
-    emitStateChanged = fn;
+    observers = append(fn, observers);
     fn(state);
   };
 

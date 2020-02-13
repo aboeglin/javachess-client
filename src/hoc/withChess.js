@@ -14,7 +14,14 @@ const withChess = Component => {
       chess.onStateChanged(setState);
     }, []);
 
-    return <Component {...props} pieces={state.pieces} />;
+    return (
+      <Component
+        {...props}
+        pieces={state.pieces}
+        possibleMoves={state.possibleMoves}
+        pieceSelected={chess.pieceSelected}
+      />
+    );
   };
 
   return Chess;
