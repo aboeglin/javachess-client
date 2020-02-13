@@ -16,6 +16,7 @@ import WHITE_KNIGHT_IMAGE_URL from "./images/knight-white.png";
 import WHITE_ROOK_IMAGE_URL from "./images/rook-white.png";
 import WHITE_QUEEN_IMAGE_URL from "./images/queen-white.png";
 import WHITE_KING_IMAGE_URL from "./images/king-white.png";
+import withChess from "../../hoc/withChess";
 
 const getImageUrl = (type, color) =>
   ({
@@ -37,10 +38,14 @@ const Piece = props =>
   pipe(
     ({ type, color }) => getImageUrl(type, color),
     url => (
-      <PieceContainer type={props.type} x={props.x}>
+      <PieceContainer
+        type={props.type}
+        x={props.x}
+        onClick={() => props.pieceSelected(props.x, props.y)} // move that handler out of jsx
+      >
         <img src={url} />
       </PieceContainer>
     )
   )(props);
 
-export default Piece;
+export default withChess(Piece);

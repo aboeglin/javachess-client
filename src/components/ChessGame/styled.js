@@ -6,6 +6,9 @@ const SQUARE_HEIGHT = "12.5%";
 const WHITE = "#f2efeb";
 const BLACK = "#331c13";
 
+const HIGHLIGHTED_WHITE = "#c2bfbb";
+const HIGHLIGHTED_BLACK = "#634c43";
+
 export const Container = styled.div`
   width: 640px;
   height: 640px;
@@ -25,7 +28,12 @@ export const Square = styled.div`
   height: ${SQUARE_HEIGHT};
   margin: 0;
 
-  background-color: ${props => (props.color === "WHITE" ? WHITE : BLACK)};
+  background-color: ${props => {
+    if (props.highlighted) {
+      return props.color === "WHITE" ? HIGHLIGHTED_WHITE : HIGHLIGHTED_BLACK;
+    }
+    return props.color === "WHITE" ? WHITE : BLACK;
+  }};
   box-shadow: inset 0px 0px 26px 5px rgba(0, 0, 0, 0.2);
 `;
 

@@ -10,6 +10,8 @@ const withChess = Component => {
     });
     const chess = useContext(ChessContext);
 
+    console.log("HOC", state);
+
     useEffect(() => {
       chess.onStateChanged(setState);
     }, []);

@@ -2,7 +2,9 @@ import React from "react";
 import { PropTypes } from "prop-types";
 import {
   always,
+  assoc,
   curry,
+  findIndex,
   pipe,
   map,
   reverse,
@@ -24,6 +26,7 @@ const SquareContainer = ({ square, piece }) => (
     x={square.x}
     y={square.y}
     key={`${square.x}${square.y}`}
+    highlighted={square.highlighted}
   >
     <SquareLabel color={square.color}>
       {square.x}
@@ -50,13 +53,6 @@ const addPiece = curry((pieces, square) => ({
   piece: pieces.length ? getPieceAtSquare(square, pieces) : null
 }));
 
-const Board = ({ squares, pieces }) =>
-  pipe(
-    map(addPiece(pieces)),
-    map(SquareContainer),
-    orderSquaresForDisplay
-  )(squares);
-
 const getPieceAtSquare = curry((square, pieces) =>
   pipe(
     find(({ x, y }) => x === square.x && y === square.y),
@@ -64,14 +60,34 @@ const getPieceAtSquare = curry((square, pieces) =>
   )(pieces)
 );
 
+const Board = ({ squares, pieces, possibleMoves }) =>
+  pipe(
+    map(
+      ifElse(
+        square =>
+          console.log(possibleMoves) ||
+          findIndex(move => square.x === move.x && square.y === move.y)(
+            possibleMoves
+          ) > -1,
+        assoc("highlighted", true),
+        assoc("highlighted", false)
+      )
+    ),
+    map(addPiece(pieces)),
+    map(SquareContainer),
+    orderSquaresForDisplay
+  )(squares);
+
 Board.propTypes = {
   squares: PropTypes.array,
-  pieces: PropTypes.array
+  pieces: PropTypes.array,
+  possibleMoves: PropTypes.array
 };
 
 Board.defaultProps = {
   squares: BOARD.squares,
-  pieces: []
+  pieces: [],
+  possibleMoves: []
 };
 
 export default withChess(Board);
