@@ -40,12 +40,14 @@ const orderSquaresForDisplay = pipe(
   flatten
 );
 
+const addPiece = curry((pieces, square) => ({
+  square,
+  piece: pieces.length ? getPieceAtSquare(square, pieces) : null
+}));
+
 const Board = ({ squares, pieces }) =>
   pipe(
-    map(square => ({
-      square,
-      piece: pieces.length ? getPieceAtSquare(square, pieces) : null
-    })),
+    map(addPiece(pieces)),
     map(renderSquare),
     orderSquaresForDisplay
   )(squares);
