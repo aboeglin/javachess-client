@@ -1,6 +1,6 @@
 import React from "react";
 
-import { Container } from "@components/Container";
+import { Container } from "..//Container";
 import { StyledFooter, Inner, Left, Right } from "./styled";
 
 export const Footer = () => (

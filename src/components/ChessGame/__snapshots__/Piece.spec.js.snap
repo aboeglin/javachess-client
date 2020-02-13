@@ -1,0 +1,13 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders <Piece /> 1`] = `
+<div
+  className="css-r5lzjs"
+  onClick={[Function]}
+  type="PAWN"
+>
+  <img
+    src={Object {}}
+  />
+</div>
+`;

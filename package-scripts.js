@@ -23,7 +23,7 @@ module.exports = {
       unit: {
         script: `SHOW_JEST_ERRORS=true  jest --coverage --verbose`,
         js: `SHOW_JEST_ERRORS=false jest --coverage --verbose`,
-        watch: `SHOW_JEST_ERRORS=true jest --coverage --verbose --watchAll`
+        watch: `SHOW_JEST_ERRORS=false jest --coverage --verbose --watchAll`
       }
     },
     serve: "gatsby serve"

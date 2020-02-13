@@ -34,7 +34,7 @@ const getImageUrl = (type, color) =>
     WHITE_KING: WHITE_KING_IMAGE_URL
   }[`${color}_${type}`]);
 
-const Piece = props =>
+export const Piece = props =>
   pipe(
     ({ type, color }) => getImageUrl(type, color),
     url => (

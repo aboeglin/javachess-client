@@ -60,12 +60,11 @@ const getPieceAtSquare = curry((square, pieces) =>
   )(pieces)
 );
 
-const Board = ({ squares, pieces, possibleMoves }) =>
+export const Board = ({ squares, pieces, possibleMoves }) =>
   pipe(
     map(
       ifElse(
         square =>
-          console.log(possibleMoves) ||
           findIndex(move => square.x === move.x && square.y === move.y)(
             possibleMoves
           ) > -1,
