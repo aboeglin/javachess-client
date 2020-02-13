@@ -1,6 +1,6 @@
 import React from "react";
 
-import { Container } from "@components/Container";
+import { Container } from "../Container";
 import { StyledHeader, Inner, Left } from "./styled";
 
 export const Header = () => (

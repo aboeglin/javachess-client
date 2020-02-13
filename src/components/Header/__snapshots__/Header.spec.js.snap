@@ -1,0 +1,23 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders <Header /> 1`] = `
+<header
+  className="css-1migcxd"
+>
+  <div
+    className="css-a7gep9"
+  >
+    <div
+      className="css-o24kmu"
+    >
+      <div
+        className="css-qn0jnn"
+      >
+        <h2>
+          Chess Game
+        </h2>
+      </div>
+    </div>
+  </div>
+</header>
+`;

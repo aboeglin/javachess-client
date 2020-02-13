@@ -1,9 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`renders <ChessGame /> 1`] = `
-<div
-  className="css-4tc7x7"
->
+exports[`renders <Board /> 1`] = `
+Array [
   <div
     className="css-1495z7x"
     color="WHITE"
@@ -18,7 +16,7 @@ exports[`renders <ChessGame /> 1`] = `
       a
       8
     </div>
-  </div>
+  </div>,
   <div
     className="css-15k27lr"
     color="BLACK"
@@ -33,7 +31,7 @@ exports[`renders <ChessGame /> 1`] = `
       b
       8
     </div>
-  </div>
+  </div>,
   <div
     className="css-1495z7x"
     color="WHITE"
@@ -48,7 +46,7 @@ exports[`renders <ChessGame /> 1`] = `
       c
       8
     </div>
-  </div>
+  </div>,
   <div
     className="css-15k27lr"
     color="BLACK"
@@ -63,7 +61,7 @@ exports[`renders <ChessGame /> 1`] = `
       d
       8
     </div>
-  </div>
+  </div>,
   <div
     className="css-1495z7x"
     color="WHITE"
@@ -78,7 +76,7 @@ exports[`renders <ChessGame /> 1`] = `
       e
       8
     </div>
-  </div>
+  </div>,
   <div
     className="css-15k27lr"
     color="BLACK"
@@ -93,7 +91,7 @@ exports[`renders <ChessGame /> 1`] = `
       f
       8
     </div>
-  </div>
+  </div>,
   <div
     className="css-1495z7x"
     color="WHITE"
@@ -108,7 +106,7 @@ exports[`renders <ChessGame /> 1`] = `
       g
       8
     </div>
-  </div>
+  </div>,
   <div
     className="css-15k27lr"
     color="BLACK"
@@ -123,7 +121,7 @@ exports[`renders <ChessGame /> 1`] = `
       h
       8
     </div>
-  </div>
+  </div>,
   <div
     className="css-15k27lr"
     color="BLACK"
@@ -138,7 +136,7 @@ exports[`renders <ChessGame /> 1`] = `
       a
       7
     </div>
-  </div>
+  </div>,
   <div
     className="css-1495z7x"
     color="WHITE"
@@ -153,7 +151,7 @@ exports[`renders <ChessGame /> 1`] = `
       b
       7
     </div>
-  </div>
+  </div>,
   <div
     className="css-15k27lr"
     color="BLACK"
@@ -168,7 +166,7 @@ exports[`renders <ChessGame /> 1`] = `
       c
       7
     </div>
-  </div>
+  </div>,
   <div
     className="css-1495z7x"
     color="WHITE"
@@ -183,7 +181,7 @@ exports[`renders <ChessGame /> 1`] = `
       d
       7
     </div>
-  </div>
+  </div>,
   <div
     className="css-15k27lr"
     color="BLACK"
@@ -198,7 +196,7 @@ exports[`renders <ChessGame /> 1`] = `
       e
       7
     </div>
-  </div>
+  </div>,
   <div
     className="css-1495z7x"
     color="WHITE"
@@ -213,7 +211,7 @@ exports[`renders <ChessGame /> 1`] = `
       f
       7
     </div>
-  </div>
+  </div>,
   <div
     className="css-15k27lr"
     color="BLACK"
@@ -228,7 +226,7 @@ exports[`renders <ChessGame /> 1`] = `
       g
       7
     </div>
-  </div>
+  </div>,
   <div
     className="css-1495z7x"
     color="WHITE"
@@ -243,7 +241,7 @@ exports[`renders <ChessGame /> 1`] = `
       h
       7
     </div>
-  </div>
+  </div>,
   <div
     className="css-1495z7x"
     color="WHITE"
@@ -258,7 +256,7 @@ exports[`renders <ChessGame /> 1`] = `
       a
       6
     </div>
-  </div>
+  </div>,
   <div
     className="css-15k27lr"
     color="BLACK"
@@ -273,7 +271,7 @@ exports[`renders <ChessGame /> 1`] = `
       b
       6
     </div>
-  </div>
+  </div>,
   <div
     className="css-1495z7x"
     color="WHITE"
@@ -288,7 +286,7 @@ exports[`renders <ChessGame /> 1`] = `
       c
       6
     </div>
-  </div>
+  </div>,
   <div
     className="css-15k27lr"
     color="BLACK"
@@ -303,7 +301,7 @@ exports[`renders <ChessGame /> 1`] = `
       d
       6
     </div>
-  </div>
+  </div>,
   <div
     className="css-1495z7x"
     color="WHITE"
@@ -318,7 +316,7 @@ exports[`renders <ChessGame /> 1`] = `
       e
       6
     </div>
-  </div>
+  </div>,
   <div
     className="css-15k27lr"
     color="BLACK"
@@ -333,7 +331,7 @@ exports[`renders <ChessGame /> 1`] = `
       f
       6
     </div>
-  </div>
+  </div>,
   <div
     className="css-1495z7x"
     color="WHITE"
@@ -348,7 +346,7 @@ exports[`renders <ChessGame /> 1`] = `
       g
       6
     </div>
-  </div>
+  </div>,
   <div
     className="css-15k27lr"
     color="BLACK"
@@ -363,7 +361,7 @@ exports[`renders <ChessGame /> 1`] = `
       h
       6
     </div>
-  </div>
+  </div>,
   <div
     className="css-15k27lr"
     color="BLACK"
@@ -378,7 +376,7 @@ exports[`renders <ChessGame /> 1`] = `
       a
       5
     </div>
-  </div>
+  </div>,
   <div
     className="css-1495z7x"
     color="WHITE"
@@ -393,7 +391,7 @@ exports[`renders <ChessGame /> 1`] = `
       b
       5
     </div>
-  </div>
+  </div>,
   <div
     className="css-15k27lr"
     color="BLACK"
@@ -408,7 +406,7 @@ exports[`renders <ChessGame /> 1`] = `
       c
       5
     </div>
-  </div>
+  </div>,
   <div
     className="css-1495z7x"
     color="WHITE"
@@ -423,7 +421,7 @@ exports[`renders <ChessGame /> 1`] = `
       d
       5
     </div>
-  </div>
+  </div>,
   <div
     className="css-15k27lr"
     color="BLACK"
@@ -438,7 +436,7 @@ exports[`renders <ChessGame /> 1`] = `
       e
       5
     </div>
-  </div>
+  </div>,
   <div
     className="css-1495z7x"
     color="WHITE"
@@ -453,7 +451,7 @@ exports[`renders <ChessGame /> 1`] = `
       f
       5
     </div>
-  </div>
+  </div>,
   <div
     className="css-15k27lr"
     color="BLACK"
@@ -468,7 +466,7 @@ exports[`renders <ChessGame /> 1`] = `
       g
       5
     </div>
-  </div>
+  </div>,
   <div
     className="css-1495z7x"
     color="WHITE"
@@ -483,7 +481,7 @@ exports[`renders <ChessGame /> 1`] = `
       h
       5
     </div>
-  </div>
+  </div>,
   <div
     className="css-1495z7x"
     color="WHITE"
@@ -498,7 +496,7 @@ exports[`renders <ChessGame /> 1`] = `
       a
       4
     </div>
-  </div>
+  </div>,
   <div
     className="css-15k27lr"
     color="BLACK"
@@ -513,7 +511,7 @@ exports[`renders <ChessGame /> 1`] = `
       b
       4
     </div>
-  </div>
+  </div>,
   <div
     className="css-1495z7x"
     color="WHITE"
@@ -528,7 +526,7 @@ exports[`renders <ChessGame /> 1`] = `
       c
       4
     </div>
-  </div>
+  </div>,
   <div
     className="css-15k27lr"
     color="BLACK"
@@ -543,7 +541,7 @@ exports[`renders <ChessGame /> 1`] = `
       d
       4
     </div>
-  </div>
+  </div>,
   <div
     className="css-1495z7x"
     color="WHITE"
@@ -558,7 +556,7 @@ exports[`renders <ChessGame /> 1`] = `
       e
       4
     </div>
-  </div>
+  </div>,
   <div
     className="css-15k27lr"
     color="BLACK"
@@ -573,7 +571,7 @@ exports[`renders <ChessGame /> 1`] = `
       f
       4
     </div>
-  </div>
+  </div>,
   <div
     className="css-1495z7x"
     color="WHITE"
@@ -588,7 +586,7 @@ exports[`renders <ChessGame /> 1`] = `
       g
       4
     </div>
-  </div>
+  </div>,
   <div
     className="css-15k27lr"
     color="BLACK"
@@ -603,7 +601,7 @@ exports[`renders <ChessGame /> 1`] = `
       h
       4
     </div>
-  </div>
+  </div>,
   <div
     className="css-15k27lr"
     color="BLACK"
@@ -618,9 +616,9 @@ exports[`renders <ChessGame /> 1`] = `
       a
       3
     </div>
-  </div>
+  </div>,
   <div
-    className="css-1495z7x"
+    className="css-6ks6ln"
     color="WHITE"
     onClick={[Function]}
     x="b"
@@ -633,7 +631,7 @@ exports[`renders <ChessGame /> 1`] = `
       b
       3
     </div>
-  </div>
+  </div>,
   <div
     className="css-15k27lr"
     color="BLACK"
@@ -648,7 +646,7 @@ exports[`renders <ChessGame /> 1`] = `
       c
       3
     </div>
-  </div>
+  </div>,
   <div
     className="css-1495z7x"
     color="WHITE"
@@ -663,7 +661,7 @@ exports[`renders <ChessGame /> 1`] = `
       d
       3
     </div>
-  </div>
+  </div>,
   <div
     className="css-15k27lr"
     color="BLACK"
@@ -678,7 +676,7 @@ exports[`renders <ChessGame /> 1`] = `
       e
       3
     </div>
-  </div>
+  </div>,
   <div
     className="css-1495z7x"
     color="WHITE"
@@ -693,7 +691,7 @@ exports[`renders <ChessGame /> 1`] = `
       f
       3
     </div>
-  </div>
+  </div>,
   <div
     className="css-15k27lr"
     color="BLACK"
@@ -708,7 +706,7 @@ exports[`renders <ChessGame /> 1`] = `
       g
       3
     </div>
-  </div>
+  </div>,
   <div
     className="css-1495z7x"
     color="WHITE"
@@ -723,7 +721,7 @@ exports[`renders <ChessGame /> 1`] = `
       h
       3
     </div>
-  </div>
+  </div>,
   <div
     className="css-1495z7x"
     color="WHITE"
@@ -738,7 +736,7 @@ exports[`renders <ChessGame /> 1`] = `
       a
       2
     </div>
-  </div>
+  </div>,
   <div
     className="css-15k27lr"
     color="BLACK"
@@ -753,7 +751,7 @@ exports[`renders <ChessGame /> 1`] = `
       b
       2
     </div>
-  </div>
+  </div>,
   <div
     className="css-1495z7x"
     color="WHITE"
@@ -768,7 +766,7 @@ exports[`renders <ChessGame /> 1`] = `
       c
       2
     </div>
-  </div>
+  </div>,
   <div
     className="css-15k27lr"
     color="BLACK"
@@ -783,7 +781,7 @@ exports[`renders <ChessGame /> 1`] = `
       d
       2
     </div>
-  </div>
+  </div>,
   <div
     className="css-1495z7x"
     color="WHITE"
@@ -798,7 +796,7 @@ exports[`renders <ChessGame /> 1`] = `
       e
       2
     </div>
-  </div>
+  </div>,
   <div
     className="css-15k27lr"
     color="BLACK"
@@ -813,7 +811,7 @@ exports[`renders <ChessGame /> 1`] = `
       f
       2
     </div>
-  </div>
+  </div>,
   <div
     className="css-1495z7x"
     color="WHITE"
@@ -828,7 +826,7 @@ exports[`renders <ChessGame /> 1`] = `
       g
       2
     </div>
-  </div>
+  </div>,
   <div
     className="css-15k27lr"
     color="BLACK"
@@ -843,7 +841,7 @@ exports[`renders <ChessGame /> 1`] = `
       h
       2
     </div>
-  </div>
+  </div>,
   <div
     className="css-15k27lr"
     color="BLACK"
@@ -858,7 +856,7 @@ exports[`renders <ChessGame /> 1`] = `
       a
       1
     </div>
-  </div>
+  </div>,
   <div
     className="css-1495z7x"
     color="WHITE"
@@ -873,7 +871,7 @@ exports[`renders <ChessGame /> 1`] = `
       b
       1
     </div>
-  </div>
+  </div>,
   <div
     className="css-15k27lr"
     color="BLACK"
@@ -888,7 +886,7 @@ exports[`renders <ChessGame /> 1`] = `
       c
       1
     </div>
-  </div>
+  </div>,
   <div
     className="css-1495z7x"
     color="WHITE"
@@ -903,7 +901,7 @@ exports[`renders <ChessGame /> 1`] = `
       d
       1
     </div>
-  </div>
+  </div>,
   <div
     className="css-15k27lr"
     color="BLACK"
@@ -918,7 +916,7 @@ exports[`renders <ChessGame /> 1`] = `
       e
       1
     </div>
-  </div>
+  </div>,
   <div
     className="css-1495z7x"
     color="WHITE"
@@ -933,7 +931,7 @@ exports[`renders <ChessGame /> 1`] = `
       f
       1
     </div>
-  </div>
+  </div>,
   <div
     className="css-15k27lr"
     color="BLACK"
@@ -948,7 +946,7 @@ exports[`renders <ChessGame /> 1`] = `
       g
       1
     </div>
-  </div>
+  </div>,
   <div
     className="css-1495z7x"
     color="WHITE"
@@ -963,6 +961,6 @@ exports[`renders <ChessGame /> 1`] = `
       h
       1
     </div>
-  </div>
-</div>
+  </div>,
+]
 `;

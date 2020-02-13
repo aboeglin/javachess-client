@@ -1,0 +1,38 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders <Footer /> 1`] = `
+<footer
+  className="css-oga8ex"
+>
+  <div
+    className="css-a7gep9"
+  >
+    <div
+      className="css-o24kmu"
+    >
+      <div
+        className="css-qn0jnn"
+      >
+        <div>
+          Contribute on
+           
+          <a
+            href="https://github.com/aboeglin/javachess-client"
+          >
+            Github
+          </a>
+        </div>
+      </div>
+      <div
+        className="css-t5att6"
+      >
+        <div>
+          Copyright ©
+           
+          2020
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+`;
