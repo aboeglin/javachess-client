@@ -40,10 +40,6 @@ export const Left = styled.div`
     flex-flow: nowrap row;
     justify-content: center;
     text-align: center;
-
-    > *:first-child {
-      margin-right: 8px;
-    }
   }
 `;
 
@@ -57,9 +53,5 @@ export const Right = styled.div`
     flex-flow: nowrap row;
     justify-content: center;
     text-align: center;
-
-    > *:first-child {
-      margin-right: 8px;
-    }
   }
 `;

@@ -40,7 +40,7 @@ export const Board = ({ squares, possibleMoves }) =>
   pipe(
     map(
       pipe(extendWithHighlighted(possibleMoves), square => (
-        <SquareContainer square={square} />
+        <SquareContainer key={`${square.x}${square.y}`} square={square} />
       ))
     ),
     orderSquaresForDisplay

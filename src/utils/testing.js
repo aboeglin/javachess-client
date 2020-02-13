@@ -5,6 +5,14 @@ import renderer from "react-test-renderer";
 import cleanStack from "clean-stack";
 import { Helmet } from "react-helmet";
 
+import ChessContext from "../hooks/chess-context";
+
+const FAKE_CHESS = {
+  onStateChanged: fn => fn({ pieces: [], possibleMoves: [], selection: null }),
+  pieceMoved: () => {},
+  pieceSelected: () => {}
+};
+
 beforeEach(() => {
   process.env.GATSBY_ENTRYPOINT = "/";
 });
@@ -22,8 +30,9 @@ export const render = (C, props = {}, el = "div") => {
     const div = document.createElement(el);
     ReactDOM.render(
       <>
-        <div id="leafletmap" />
-        <C {...props} />
+        <ChessContext.Provider value={FAKE_CHESS}>
+          <C {...props} />
+        </ChessContext.Provider>
       </>,
       div
     );
@@ -54,7 +63,11 @@ const nameOf = C => C.displayName || C.name || "A Component";
 export const renderWithTestRenderer = curry((C, props) => {
   it(`renders <${nameOf(C)} />`, () => {
     try {
-      const c = renderer.create(<C {...props} />);
+      const c = renderer.create(
+        <ChessContext.Provider value={FAKE_CHESS}>
+          <C {...props} />
+        </ChessContext.Provider>
+      );
       let tree = c.toJSON();
       expect(tree).toMatchSnapshot();
     } catch (error) {

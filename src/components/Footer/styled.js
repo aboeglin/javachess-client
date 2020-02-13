@@ -1,4 +1,4 @@
-import styled from '@emotion/styled'
+import styled from "@emotion/styled";
 
 export const StyledFooter = styled.footer`
   padding: 24px 0;
@@ -16,7 +16,7 @@ export const StyledFooter = styled.footer`
       text-decoration: underline;
     }
   }
-`
+`;
 
 export const Inner = styled.div`
   display: flex;
@@ -25,7 +25,7 @@ export const Inner = styled.div`
   @media (max-width: 648px) {
     flex-flow: nowrap column;
   }
-`
+`;
 
 export const Left = styled.div`
   margin-right: auto;
@@ -36,12 +36,8 @@ export const Left = styled.div`
     flex-flow: nowrap row;
     justify-content: center;
     text-align: center;
-
-    > *:first-child {
-      margin-right: 8px;
-    }
   }
-`
+`;
 
 export const Right = styled.div`
   margin-left: auto;
@@ -53,9 +49,5 @@ export const Right = styled.div`
     flex-flow: nowrap row;
     justify-content: center;
     text-align: center;
-
-    > *:first-child {
-      margin-right: 8px;
-    }
   }
-`
+`;

@@ -39,7 +39,7 @@ export const SquareContainer = ({ square, pieces, pieceMoved, selection }) =>
 
 SquareContainer.propTypes = {
   square: PropTypes.object,
-  pieces: PropTypes.object
+  pieces: PropTypes.array
 };
 
 export default withChess(SquareContainer);

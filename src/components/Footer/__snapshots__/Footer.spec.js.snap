@@ -11,7 +11,7 @@ exports[`renders <Footer /> 1`] = `
       className="css-o24kmu"
     >
       <div
-        className="css-n4h2v0"
+        className="css-qn0jnn"
       >
         <div>
           Contribute on
@@ -24,7 +24,7 @@ exports[`renders <Footer /> 1`] = `
         </div>
       </div>
       <div
-        className="css-vw052z"
+        className="css-t5att6"
       >
         <div>
           Copyright ©
