@@ -1,4 +1,3 @@
-import React from "react";
 const R = require("ramda");
 const SHOW_ERRORS = process.env.SHOW_JEST_ERRORS || true;
 

@@ -25,7 +25,7 @@ module.exports = {
     gatsbyConfigAliases
   ),
   testPathIgnorePatterns: [`node_modules`, `.cache`],
-  coveragePathIgnorePatterns: [`index\.js`],
+  coveragePathIgnorePatterns: ["index.js"],
   transformIgnorePatterns: [`node_modules/(?!(gatsby)/)`],
   globals: {
     __PATH_PREFIX__: ``
