@@ -17,3 +17,31 @@ exports[`renders <SquareContainer /> 1`] = `
   </div>
 </div>
 `;
+
+exports[`renders <SquareContainer /> 2`] = `
+<div
+  className="css-1495z7x"
+  color="WHITE"
+  onClick={[Function]}
+  x="a"
+  y="3"
+>
+  <div
+    className="css-1nwny1d"
+    color="WHITE"
+  >
+    a
+    3
+  </div>
+  <div
+    className="css-132xnrr"
+    onClick={[Function]}
+    type="PAWN"
+    x="a"
+  >
+    <img
+      src={Object {}}
+    />
+  </div>
+</div>
+`;
