@@ -25,13 +25,13 @@ const generateRandomUser = () =>
 
 const HARDCODED_EMAIL = `${generateRandomUser()}@domain.tld`;
 
-const parseBody = pipe(propOr({}, "body"), JSON.parse);
+export const parseBody = pipe(propOr({}, "body"), JSON.parse);
 
-const handlePossibleMovesReceived = curry((update, message) =>
+export const handlePossibleMovesReceived = curry((update, message) =>
   pipe(parseBody, pick(["possibleMoves"]), update)(message)
 );
 
-const handlePieceMovedReceived = curry((update, message) =>
+export const handlePieceMovedReceived = curry((update, message) =>
   pipe(
     parseBody,
     box,
