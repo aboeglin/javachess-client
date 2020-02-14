@@ -12,7 +12,6 @@ const HIGHLIGHTED_BLACK = "#634c43";
 export const Container = styled.div`
   width: 640px;
   height: 640px;
-  background-color: blue;
   position: relative;
   margin: auto;
 

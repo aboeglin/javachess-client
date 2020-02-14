@@ -14,7 +14,7 @@ const withChess = Component => {
     const chess = useContext(ChessContext);
 
     useEffect(() => {
-      chess.onStateChanged(setState);
+      return chess.onStateChanged(setState);
     }, []);
 
     return (

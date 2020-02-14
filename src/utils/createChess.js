@@ -1,7 +1,22 @@
 import SockJS from "sockjs-client";
 import Stomp from "stompjs";
 
-import { ap, append, find, forEach, pipe, prop, propEq } from "ramda";
+import {
+  always,
+  ap,
+  append,
+  curry,
+  find,
+  forEach,
+  pathOr,
+  pick,
+  pipe,
+  prop,
+  propEq,
+  propOr,
+  reject
+} from "ramda";
+import { box } from "./fp";
 
 const generateRandomUser = () =>
   Math.random()
@@ -10,18 +25,61 @@ const generateRandomUser = () =>
 
 const HARDCODED_EMAIL = `${generateRandomUser()}@domain.tld`;
 
+const parseBody = pipe(propOr({}, "body"), JSON.parse);
+
+const handlePossibleMovesReceived = curry((update, message) =>
+  pipe(parseBody, pick(["possibleMoves"]), update)(message)
+);
+
+const handlePieceMovedReceived = curry((update, message) =>
+  pipe(
+    parseBody,
+    box,
+    ap([
+      pathOr([], ["game", "board", "pieces"]),
+      always([]),
+      always(null),
+      pathOr([], ["game", "activePlayer", "color"])
+    ]),
+    ([pieces, possibleMoves, selection, activePlayerColor]) =>
+      update({
+        pieces,
+        possibleMoves,
+        selection,
+        activePlayerColor
+      })
+  )(message)
+);
+
 const gameToPlayerColor = pipe(
-  x => [x],
-  ap([prop("player1"), prop("player2")]),
+  box,
+  ap([propOr({}, "player1"), propOr({}, "player2")]),
   find(propEq("id", HARDCODED_EMAIL)),
   prop("color")
+);
+
+const handleGameReadyReceived = curry((update, message) =>
+  pipe(
+    parseBody,
+    box,
+    ap([
+      pathOr([], ["game", "board", "pieces"]),
+      pipe(propOr({}, "game"), gameToPlayerColor),
+      pathOr([], ["game", "activePlayer", "color"])
+    ]),
+    ([pieces, playerColor, activePlayerColor]) =>
+      update({
+        pieces,
+        playerColor,
+        activePlayerColor
+      })
+  )(message)
 );
 
 const createChess = () => {
   const socket = new SockJS("http://localhost:8080/ws");
   const ws = Stomp.over(socket);
-
-  ws.debug = null;
+  ws.debug = null; // Remove debug messages for socket communication
 
   let observers = [];
   let gameId = null;
@@ -40,39 +98,17 @@ const createChess = () => {
 
       ws.subscribe(
         `/queue/game/${gameId}/ready`,
-        pipe(prop("body"), body => {
-          const parsedBody = JSON.parse(body);
-
-          updateState({
-            pieces: parsedBody.game.board.pieces,
-            playerColor: gameToPlayerColor(parsedBody.game),
-            activePlayerColor: parsedBody.game.activePlayer.color
-          });
-        })
+        handleGameReadyReceived(updateState)
       );
 
       ws.subscribe(
         `/queue/game/${gameId}/piece-moved`,
-        pipe(prop("body"), body => {
-          const parsedBody = JSON.parse(body);
-
-          // If move successful
-          updateState({
-            pieces: parsedBody.game.board.pieces,
-            possibleMoves: [],
-            selection: null,
-            activePlayerColor: parsedBody.game.activePlayer.color
-          });
-          // Else API should return MoveError and we should keep the possible moves
-        })
+        handlePieceMovedReceived(updateState)
       );
 
       ws.subscribe(
         `/queue/game/${gameId}/possible-moves`,
-        pipe(prop("body"), body => {
-          const possibleMoves = JSON.parse(body).possibleMoves;
-          updateState({ possibleMoves: possibleMoves });
-        })
+        handlePossibleMovesReceived(updateState)
       );
 
       ws.send(
@@ -107,15 +143,20 @@ const createChess = () => {
   };
 
   const updateState = newState => {
+    console.log("OBSERVERS", observers.length);
     state = { ...state, ...newState };
     forEach(fn => fn(state))(observers);
-    console.log(state);
   };
 
   // Store array of handlers, otherwise only the last one can get notified from state changed
   const onStateChanged = fn => {
     observers = append(fn, observers);
-    fn(state);
+    fn(state); // Call the observer to give it initial state
+
+    // unsubscribe cb
+    return () => {
+      observers = reject(x => x === fn)(observers);
+    };
   };
 
   return {
