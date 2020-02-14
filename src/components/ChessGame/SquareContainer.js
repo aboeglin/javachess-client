@@ -7,7 +7,7 @@ import { Square, SquareLabel } from "./styled";
 import withChess from "../../hoc/withChess";
 
 const getPieceAtSquare = curry((pieces, square) =>
-  find(({ x, y }) => x === square.x && y === square.y, pieces)
+  find(({ x, y }) => x === square.x && y === square.y)(pieces)
 );
 
 export const SquareContainer = ({ square, pieces, pieceMoved, selection }) =>

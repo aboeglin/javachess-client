@@ -1,9 +1,21 @@
 import SockJS from "sockjs-client";
 import Stomp from "stompjs";
 
-import { pipe, prop, append, forEach } from "ramda";
+import { ap, append, find, forEach, pipe, prop, propEq } from "ramda";
 
-const HARDCODED_EMAIL = "user@domain.tld";
+const generateRandomUser = () =>
+  Math.random()
+    .toString(36)
+    .substr(2, 5);
+
+const HARDCODED_EMAIL = `${generateRandomUser()}@domain.tld`;
+
+const gameToPlayerColor = pipe(
+  x => [x],
+  ap([prop("player1"), prop("player2")]),
+  find(propEq("id", HARDCODED_EMAIL)),
+  prop("color")
+);
 
 const createChess = () => {
   const socket = new SockJS("http://localhost:8080/ws");
@@ -17,30 +29,39 @@ const createChess = () => {
   let state = {
     pieces: [],
     possibleMoves: [],
-    selection: null
+    selection: null,
+    playerColor: null,
+    activePlayerColor: "WHITE"
   };
 
   ws.connect({}, () => {
     ws.subscribe("/user/queue/lfg/ack", frame => {
       gameId = pipe(prop("body"), JSON.parse, prop("gameId"))(frame);
+
       ws.subscribe(
         `/queue/game/${gameId}/ready`,
         pipe(prop("body"), body => {
-          const newPieces = JSON.parse(body).game.board.pieces;
-          updateState({ pieces: newPieces });
+          const parsedBody = JSON.parse(body);
+
+          updateState({
+            pieces: parsedBody.game.board.pieces,
+            playerColor: gameToPlayerColor(parsedBody.game),
+            activePlayerColor: parsedBody.game.activePlayer.color
+          });
         })
       );
 
       ws.subscribe(
         `/queue/game/${gameId}/piece-moved`,
         pipe(prop("body"), body => {
-          const newPieces = JSON.parse(body).game.board.pieces;
+          const parsedBody = JSON.parse(body);
 
           // If move successful
           updateState({
-            pieces: newPieces,
+            pieces: parsedBody.game.board.pieces,
             possibleMoves: [],
-            selection: null
+            selection: null,
+            activePlayerColor: parsedBody.game.activePlayer.color
           });
           // Else API should return MoveError and we should keep the possible moves
         })
@@ -88,6 +109,7 @@ const createChess = () => {
   const updateState = newState => {
     state = { ...state, ...newState };
     forEach(fn => fn(state))(observers);
+    console.log(state);
   };
 
   // Store array of handlers, otherwise only the last one can get notified from state changed
