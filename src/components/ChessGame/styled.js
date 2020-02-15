@@ -3,11 +3,17 @@ import styled from "@emotion/styled";
 const SQUARE_WIDTH = "12.5%";
 const SQUARE_HEIGHT = "12.5%";
 
-const WHITE = "#f2efeb";
-const BLACK = "#331c13";
+const WHITE = "#fff";
+const BLACK = "#eee";
 
-const HIGHLIGHTED_WHITE = "#c2bfbb";
-const HIGHLIGHTED_BLACK = "#634c43";
+const LABEL_WHITE = "#ccc";
+const LABEL_BLACK = "#bbb";
+
+const HIGHLIGHTED_WHITE_WHITE = "#eff";
+const HIGHLIGHTED_WHITE_BLACK = "#eef";
+
+const HIGHLIGHTED_BLACK_WHITE = "#dee";
+const HIGHLIGHTED_BLACK_BLACK = "#dde";
 
 export const Container = styled.div`
   width: 640px;
@@ -27,17 +33,29 @@ export const Square = styled.div`
   height: ${SQUARE_HEIGHT};
   margin: 0;
 
+  cursor: ${props => (props.highlighted ? "pointer" : "initial")};
+
   background-color: ${props => {
     if (props.highlighted) {
-      return props.color === "WHITE" ? HIGHLIGHTED_WHITE : HIGHLIGHTED_BLACK;
+      if (props.color === "WHITE") {
+        return props.selectionColor === "WHITE"
+          ? HIGHLIGHTED_WHITE_WHITE
+          : HIGHLIGHTED_WHITE_BLACK;
+      } else {
+        return props.selectionColor === "WHITE"
+          ? HIGHLIGHTED_BLACK_WHITE
+          : HIGHLIGHTED_BLACK_BLACK;
+      }
     }
     return props.color === "WHITE" ? WHITE : BLACK;
   }};
-  box-shadow: inset 0px 0px 26px 5px rgba(0, 0, 0, 0.2);
+  box-shadow: ${props =>
+    props.selected ? "0px 0px 16.4px 0.7px rgba(0,0,0,0.15)" : "initial"};
+  z-index: ${props => (props.selected ? 100 : 0)};
 `;
 
 export const SquareLabel = styled.div`
-  color: ${props => (props.color === "WHITE" ? BLACK : WHITE)};
+  color: ${props => (props.color === "WHITE" ? LABEL_WHITE : LABEL_BLACK)};
   opacity: 0.3;
   margin-left: 5px;
   margin-top: 5px;
@@ -47,32 +65,12 @@ export const PieceContainer = styled.div`
   height: 100%;
 
   img {
-    height: ${props => {
-      switch (props.type) {
-        case "QUEEN":
-        case "KING":
-        case "BISHOP":
-        case "ROOK":
-        case "KNIGHT":
-          return "65px";
-        default:
-          return "55px";
-      }
-    }};
+    cursor: pointer;
+    height: 44px;
     position: absolute;
     display: block;
-    bottom: 5px;
+    bottom: 18px;
     left: 50%;
-    transform: ${props => {
-      switch (props.x) {
-        case "a":
-        case "b":
-        case "c":
-        case "d":
-          return "translateX(-50%) scaleX(-1)";
-        default:
-          return "translateX(-50%)";
-      }
-    }};
+    transform: translateX(-50%);
   }
 `;

@@ -1,6 +1,6 @@
 import React from "react";
 import { PropTypes } from "prop-types";
-import { curry, find, pipe } from "ramda";
+import { curry, find, pipe, propOr } from "ramda";
 
 import Piece from "./Piece";
 import { Square, SquareLabel } from "./styled";
@@ -10,6 +10,14 @@ const getPieceAtSquare = curry((pieces, square) =>
   find(({ x, y }) => x === square.x && y === square.y)(pieces)
 );
 
+const isSelected = curry(
+  (selection, square) =>
+    square.x === propOr(false, "x", selection) &&
+    square.y === propOr(false, "y", selection)
+);
+
+const getSelectionColor = selection => (selection ? selection.color : false);
+
 export const SquareContainer = ({ square, pieces, pieceMoved, selection }) =>
   pipe(getPieceAtSquare(pieces), piece => (
     <Square
@@ -18,6 +26,8 @@ export const SquareContainer = ({ square, pieces, pieceMoved, selection }) =>
       y={square.y}
       key={`${square.x}${square.y}`}
       highlighted={square.highlighted}
+      selected={isSelected(selection, square)}
+      selectionColor={getSelectionColor(selection)}
       onClick={() => {
         if (
           selection &&
