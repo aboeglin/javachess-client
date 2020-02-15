@@ -36,7 +36,7 @@ export const handlePieceMovedReceived = curry((update, message) =>
     parseBody,
     box,
     ap([
-      pathOr([], ["game", "board", "pieces"]),
+      pathOr([], ["game", "pieces"]),
       always([]),
       always(null),
       pathOr([], ["game", "activePlayer", "color"])
@@ -63,7 +63,7 @@ const handleGameReadyReceived = curry((update, message) =>
     parseBody,
     box,
     ap([
-      pathOr([], ["game", "board", "pieces"]),
+      pathOr([], ["game", "pieces"]),
       pipe(propOr({}, "game"), gameToPlayerColor),
       pathOr([], ["game", "activePlayer", "color"])
     ]),

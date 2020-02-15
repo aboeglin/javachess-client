@@ -25,7 +25,7 @@ test("handlePossibleMovesReceived", done => {
 
 test("handlePieceMovedReceived", done => {
   const JSON = {
-    body: `{\"game\": {\"board\": {\"pieces\": []}, \"activePlayer\": {\"color\": \"WHITE\"}}}`
+    body: `{\"game\": {\"pieces\": [], \"activePlayer\": {\"color\": \"WHITE\"}}}`
   };
   const expected = {
     pieces: [],
