@@ -2,7 +2,7 @@
 
 exports[`renders <Piece /> 1`] = `
 <div
-  className="css-132xnrr"
+  className="css-kxoee0"
   onClick={[Function]}
   type="PAWN"
   x="a"

@@ -3,14 +3,14 @@
 exports[`renders <Board /> 1`] = `
 Array [
   <div
-    className="css-1495z7x"
+    className="css-14mmxv0"
     color="WHITE"
-    onClick={[Function]}
+    selected={false}
     x="a"
     y="8"
   >
     <div
-      className="css-1nwny1d"
+      className="css-1qigpt8"
       color="WHITE"
     >
       a
@@ -18,14 +18,14 @@ Array [
     </div>
   </div>,
   <div
-    className="css-15k27lr"
+    className="css-1ojhaft"
     color="BLACK"
-    onClick={[Function]}
+    selected={false}
     x="b"
     y="8"
   >
     <div
-      className="css-1y32jx2"
+      className="css-85kkh5"
       color="BLACK"
     >
       b
@@ -33,14 +33,14 @@ Array [
     </div>
   </div>,
   <div
-    className="css-1495z7x"
+    className="css-14mmxv0"
     color="WHITE"
-    onClick={[Function]}
+    selected={false}
     x="c"
     y="8"
   >
     <div
-      className="css-1nwny1d"
+      className="css-1qigpt8"
       color="WHITE"
     >
       c
@@ -48,14 +48,14 @@ Array [
     </div>
   </div>,
   <div
-    className="css-15k27lr"
+    className="css-1ojhaft"
     color="BLACK"
-    onClick={[Function]}
+    selected={false}
     x="d"
     y="8"
   >
     <div
-      className="css-1y32jx2"
+      className="css-85kkh5"
       color="BLACK"
     >
       d
@@ -63,14 +63,14 @@ Array [
     </div>
   </div>,
   <div
-    className="css-1495z7x"
+    className="css-14mmxv0"
     color="WHITE"
-    onClick={[Function]}
+    selected={false}
     x="e"
     y="8"
   >
     <div
-      className="css-1nwny1d"
+      className="css-1qigpt8"
       color="WHITE"
     >
       e
@@ -78,14 +78,14 @@ Array [
     </div>
   </div>,
   <div
-    className="css-15k27lr"
+    className="css-1ojhaft"
     color="BLACK"
-    onClick={[Function]}
+    selected={false}
     x="f"
     y="8"
   >
     <div
-      className="css-1y32jx2"
+      className="css-85kkh5"
       color="BLACK"
     >
       f
@@ -93,14 +93,14 @@ Array [
     </div>
   </div>,
   <div
-    className="css-1495z7x"
+    className="css-14mmxv0"
     color="WHITE"
-    onClick={[Function]}
+    selected={false}
     x="g"
     y="8"
   >
     <div
-      className="css-1nwny1d"
+      className="css-1qigpt8"
       color="WHITE"
     >
       g
@@ -108,14 +108,14 @@ Array [
     </div>
   </div>,
   <div
-    className="css-15k27lr"
+    className="css-1ojhaft"
     color="BLACK"
-    onClick={[Function]}
+    selected={false}
     x="h"
     y="8"
   >
     <div
-      className="css-1y32jx2"
+      className="css-85kkh5"
       color="BLACK"
     >
       h
@@ -123,14 +123,14 @@ Array [
     </div>
   </div>,
   <div
-    className="css-15k27lr"
+    className="css-1ojhaft"
     color="BLACK"
-    onClick={[Function]}
+    selected={false}
     x="a"
     y="7"
   >
     <div
-      className="css-1y32jx2"
+      className="css-85kkh5"
       color="BLACK"
     >
       a
@@ -138,14 +138,14 @@ Array [
     </div>
   </div>,
   <div
-    className="css-1495z7x"
+    className="css-14mmxv0"
     color="WHITE"
-    onClick={[Function]}
+    selected={false}
     x="b"
     y="7"
   >
     <div
-      className="css-1nwny1d"
+      className="css-1qigpt8"
       color="WHITE"
     >
       b
@@ -153,14 +153,14 @@ Array [
     </div>
   </div>,
   <div
-    className="css-15k27lr"
+    className="css-1ojhaft"
     color="BLACK"
-    onClick={[Function]}
+    selected={false}
     x="c"
     y="7"
   >
     <div
-      className="css-1y32jx2"
+      className="css-85kkh5"
       color="BLACK"
     >
       c
@@ -168,14 +168,14 @@ Array [
     </div>
   </div>,
   <div
-    className="css-1495z7x"
+    className="css-14mmxv0"
     color="WHITE"
-    onClick={[Function]}
+    selected={false}
     x="d"
     y="7"
   >
     <div
-      className="css-1nwny1d"
+      className="css-1qigpt8"
       color="WHITE"
     >
       d
@@ -183,14 +183,14 @@ Array [
     </div>
   </div>,
   <div
-    className="css-15k27lr"
+    className="css-1ojhaft"
     color="BLACK"
-    onClick={[Function]}
+    selected={false}
     x="e"
     y="7"
   >
     <div
-      className="css-1y32jx2"
+      className="css-85kkh5"
       color="BLACK"
     >
       e
@@ -198,14 +198,14 @@ Array [
     </div>
   </div>,
   <div
-    className="css-1495z7x"
+    className="css-14mmxv0"
     color="WHITE"
-    onClick={[Function]}
+    selected={false}
     x="f"
     y="7"
   >
     <div
-      className="css-1nwny1d"
+      className="css-1qigpt8"
       color="WHITE"
     >
       f
@@ -213,14 +213,14 @@ Array [
     </div>
   </div>,
   <div
-    className="css-15k27lr"
+    className="css-1ojhaft"
     color="BLACK"
-    onClick={[Function]}
+    selected={false}
     x="g"
     y="7"
   >
     <div
-      className="css-1y32jx2"
+      className="css-85kkh5"
       color="BLACK"
     >
       g
@@ -228,14 +228,14 @@ Array [
     </div>
   </div>,
   <div
-    className="css-1495z7x"
+    className="css-14mmxv0"
     color="WHITE"
-    onClick={[Function]}
+    selected={false}
     x="h"
     y="7"
   >
     <div
-      className="css-1nwny1d"
+      className="css-1qigpt8"
       color="WHITE"
     >
       h
@@ -243,14 +243,14 @@ Array [
     </div>
   </div>,
   <div
-    className="css-1495z7x"
+    className="css-14mmxv0"
     color="WHITE"
-    onClick={[Function]}
+    selected={false}
     x="a"
     y="6"
   >
     <div
-      className="css-1nwny1d"
+      className="css-1qigpt8"
       color="WHITE"
     >
       a
@@ -258,14 +258,14 @@ Array [
     </div>
   </div>,
   <div
-    className="css-15k27lr"
+    className="css-1ojhaft"
     color="BLACK"
-    onClick={[Function]}
+    selected={false}
     x="b"
     y="6"
   >
     <div
-      className="css-1y32jx2"
+      className="css-85kkh5"
       color="BLACK"
     >
       b
@@ -273,14 +273,14 @@ Array [
     </div>
   </div>,
   <div
-    className="css-1495z7x"
+    className="css-14mmxv0"
     color="WHITE"
-    onClick={[Function]}
+    selected={false}
     x="c"
     y="6"
   >
     <div
-      className="css-1nwny1d"
+      className="css-1qigpt8"
       color="WHITE"
     >
       c
@@ -288,14 +288,14 @@ Array [
     </div>
   </div>,
   <div
-    className="css-15k27lr"
+    className="css-1ojhaft"
     color="BLACK"
-    onClick={[Function]}
+    selected={false}
     x="d"
     y="6"
   >
     <div
-      className="css-1y32jx2"
+      className="css-85kkh5"
       color="BLACK"
     >
       d
@@ -303,14 +303,14 @@ Array [
     </div>
   </div>,
   <div
-    className="css-1495z7x"
+    className="css-14mmxv0"
     color="WHITE"
-    onClick={[Function]}
+    selected={false}
     x="e"
     y="6"
   >
     <div
-      className="css-1nwny1d"
+      className="css-1qigpt8"
       color="WHITE"
     >
       e
@@ -318,14 +318,14 @@ Array [
     </div>
   </div>,
   <div
-    className="css-15k27lr"
+    className="css-1ojhaft"
     color="BLACK"
-    onClick={[Function]}
+    selected={false}
     x="f"
     y="6"
   >
     <div
-      className="css-1y32jx2"
+      className="css-85kkh5"
       color="BLACK"
     >
       f
@@ -333,14 +333,14 @@ Array [
     </div>
   </div>,
   <div
-    className="css-1495z7x"
+    className="css-14mmxv0"
     color="WHITE"
-    onClick={[Function]}
+    selected={false}
     x="g"
     y="6"
   >
     <div
-      className="css-1nwny1d"
+      className="css-1qigpt8"
       color="WHITE"
     >
       g
@@ -348,14 +348,14 @@ Array [
     </div>
   </div>,
   <div
-    className="css-15k27lr"
+    className="css-1ojhaft"
     color="BLACK"
-    onClick={[Function]}
+    selected={false}
     x="h"
     y="6"
   >
     <div
-      className="css-1y32jx2"
+      className="css-85kkh5"
       color="BLACK"
     >
       h
@@ -363,14 +363,14 @@ Array [
     </div>
   </div>,
   <div
-    className="css-15k27lr"
+    className="css-1ojhaft"
     color="BLACK"
-    onClick={[Function]}
+    selected={false}
     x="a"
     y="5"
   >
     <div
-      className="css-1y32jx2"
+      className="css-85kkh5"
       color="BLACK"
     >
       a
@@ -378,14 +378,14 @@ Array [
     </div>
   </div>,
   <div
-    className="css-1495z7x"
+    className="css-14mmxv0"
     color="WHITE"
-    onClick={[Function]}
+    selected={false}
     x="b"
     y="5"
   >
     <div
-      className="css-1nwny1d"
+      className="css-1qigpt8"
       color="WHITE"
     >
       b
@@ -393,14 +393,14 @@ Array [
     </div>
   </div>,
   <div
-    className="css-15k27lr"
+    className="css-1ojhaft"
     color="BLACK"
-    onClick={[Function]}
+    selected={false}
     x="c"
     y="5"
   >
     <div
-      className="css-1y32jx2"
+      className="css-85kkh5"
       color="BLACK"
     >
       c
@@ -408,14 +408,14 @@ Array [
     </div>
   </div>,
   <div
-    className="css-1495z7x"
+    className="css-14mmxv0"
     color="WHITE"
-    onClick={[Function]}
+    selected={false}
     x="d"
     y="5"
   >
     <div
-      className="css-1nwny1d"
+      className="css-1qigpt8"
       color="WHITE"
     >
       d
@@ -423,14 +423,14 @@ Array [
     </div>
   </div>,
   <div
-    className="css-15k27lr"
+    className="css-1ojhaft"
     color="BLACK"
-    onClick={[Function]}
+    selected={false}
     x="e"
     y="5"
   >
     <div
-      className="css-1y32jx2"
+      className="css-85kkh5"
       color="BLACK"
     >
       e
@@ -438,14 +438,14 @@ Array [
     </div>
   </div>,
   <div
-    className="css-1495z7x"
+    className="css-14mmxv0"
     color="WHITE"
-    onClick={[Function]}
+    selected={false}
     x="f"
     y="5"
   >
     <div
-      className="css-1nwny1d"
+      className="css-1qigpt8"
       color="WHITE"
     >
       f
@@ -453,14 +453,14 @@ Array [
     </div>
   </div>,
   <div
-    className="css-15k27lr"
+    className="css-1ojhaft"
     color="BLACK"
-    onClick={[Function]}
+    selected={false}
     x="g"
     y="5"
   >
     <div
-      className="css-1y32jx2"
+      className="css-85kkh5"
       color="BLACK"
     >
       g
@@ -468,14 +468,14 @@ Array [
     </div>
   </div>,
   <div
-    className="css-1495z7x"
+    className="css-14mmxv0"
     color="WHITE"
-    onClick={[Function]}
+    selected={false}
     x="h"
     y="5"
   >
     <div
-      className="css-1nwny1d"
+      className="css-1qigpt8"
       color="WHITE"
     >
       h
@@ -483,14 +483,14 @@ Array [
     </div>
   </div>,
   <div
-    className="css-1495z7x"
+    className="css-14mmxv0"
     color="WHITE"
-    onClick={[Function]}
+    selected={false}
     x="a"
     y="4"
   >
     <div
-      className="css-1nwny1d"
+      className="css-1qigpt8"
       color="WHITE"
     >
       a
@@ -498,14 +498,14 @@ Array [
     </div>
   </div>,
   <div
-    className="css-15k27lr"
+    className="css-1ojhaft"
     color="BLACK"
-    onClick={[Function]}
+    selected={false}
     x="b"
     y="4"
   >
     <div
-      className="css-1y32jx2"
+      className="css-85kkh5"
       color="BLACK"
     >
       b
@@ -513,14 +513,14 @@ Array [
     </div>
   </div>,
   <div
-    className="css-1495z7x"
+    className="css-14mmxv0"
     color="WHITE"
-    onClick={[Function]}
+    selected={false}
     x="c"
     y="4"
   >
     <div
-      className="css-1nwny1d"
+      className="css-1qigpt8"
       color="WHITE"
     >
       c
@@ -528,14 +528,14 @@ Array [
     </div>
   </div>,
   <div
-    className="css-15k27lr"
+    className="css-1ojhaft"
     color="BLACK"
-    onClick={[Function]}
+    selected={false}
     x="d"
     y="4"
   >
     <div
-      className="css-1y32jx2"
+      className="css-85kkh5"
       color="BLACK"
     >
       d
@@ -543,14 +543,14 @@ Array [
     </div>
   </div>,
   <div
-    className="css-1495z7x"
+    className="css-14mmxv0"
     color="WHITE"
-    onClick={[Function]}
+    selected={false}
     x="e"
     y="4"
   >
     <div
-      className="css-1nwny1d"
+      className="css-1qigpt8"
       color="WHITE"
     >
       e
@@ -558,14 +558,14 @@ Array [
     </div>
   </div>,
   <div
-    className="css-15k27lr"
+    className="css-1ojhaft"
     color="BLACK"
-    onClick={[Function]}
+    selected={false}
     x="f"
     y="4"
   >
     <div
-      className="css-1y32jx2"
+      className="css-85kkh5"
       color="BLACK"
     >
       f
@@ -573,14 +573,14 @@ Array [
     </div>
   </div>,
   <div
-    className="css-1495z7x"
+    className="css-14mmxv0"
     color="WHITE"
-    onClick={[Function]}
+    selected={false}
     x="g"
     y="4"
   >
     <div
-      className="css-1nwny1d"
+      className="css-1qigpt8"
       color="WHITE"
     >
       g
@@ -588,14 +588,14 @@ Array [
     </div>
   </div>,
   <div
-    className="css-15k27lr"
+    className="css-1ojhaft"
     color="BLACK"
-    onClick={[Function]}
+    selected={false}
     x="h"
     y="4"
   >
     <div
-      className="css-1y32jx2"
+      className="css-85kkh5"
       color="BLACK"
     >
       h
@@ -603,14 +603,14 @@ Array [
     </div>
   </div>,
   <div
-    className="css-15k27lr"
+    className="css-1ojhaft"
     color="BLACK"
-    onClick={[Function]}
+    selected={false}
     x="a"
     y="3"
   >
     <div
-      className="css-1y32jx2"
+      className="css-85kkh5"
       color="BLACK"
     >
       a
@@ -618,14 +618,14 @@ Array [
     </div>
   </div>,
   <div
-    className="css-6ks6ln"
+    className="css-9z2vnx"
     color="WHITE"
-    onClick={[Function]}
+    selected={false}
     x="b"
     y="3"
   >
     <div
-      className="css-1nwny1d"
+      className="css-1qigpt8"
       color="WHITE"
     >
       b
@@ -633,14 +633,14 @@ Array [
     </div>
   </div>,
   <div
-    className="css-15k27lr"
+    className="css-1ojhaft"
     color="BLACK"
-    onClick={[Function]}
+    selected={false}
     x="c"
     y="3"
   >
     <div
-      className="css-1y32jx2"
+      className="css-85kkh5"
       color="BLACK"
     >
       c
@@ -648,14 +648,14 @@ Array [
     </div>
   </div>,
   <div
-    className="css-1495z7x"
+    className="css-14mmxv0"
     color="WHITE"
-    onClick={[Function]}
+    selected={false}
     x="d"
     y="3"
   >
     <div
-      className="css-1nwny1d"
+      className="css-1qigpt8"
       color="WHITE"
     >
       d
@@ -663,14 +663,14 @@ Array [
     </div>
   </div>,
   <div
-    className="css-15k27lr"
+    className="css-1ojhaft"
     color="BLACK"
-    onClick={[Function]}
+    selected={false}
     x="e"
     y="3"
   >
     <div
-      className="css-1y32jx2"
+      className="css-85kkh5"
       color="BLACK"
     >
       e
@@ -678,14 +678,14 @@ Array [
     </div>
   </div>,
   <div
-    className="css-1495z7x"
+    className="css-14mmxv0"
     color="WHITE"
-    onClick={[Function]}
+    selected={false}
     x="f"
     y="3"
   >
     <div
-      className="css-1nwny1d"
+      className="css-1qigpt8"
       color="WHITE"
     >
       f
@@ -693,14 +693,14 @@ Array [
     </div>
   </div>,
   <div
-    className="css-15k27lr"
+    className="css-1ojhaft"
     color="BLACK"
-    onClick={[Function]}
+    selected={false}
     x="g"
     y="3"
   >
     <div
-      className="css-1y32jx2"
+      className="css-85kkh5"
       color="BLACK"
     >
       g
@@ -708,14 +708,14 @@ Array [
     </div>
   </div>,
   <div
-    className="css-1495z7x"
+    className="css-14mmxv0"
     color="WHITE"
-    onClick={[Function]}
+    selected={false}
     x="h"
     y="3"
   >
     <div
-      className="css-1nwny1d"
+      className="css-1qigpt8"
       color="WHITE"
     >
       h
@@ -723,14 +723,14 @@ Array [
     </div>
   </div>,
   <div
-    className="css-1495z7x"
+    className="css-14mmxv0"
     color="WHITE"
-    onClick={[Function]}
+    selected={false}
     x="a"
     y="2"
   >
     <div
-      className="css-1nwny1d"
+      className="css-1qigpt8"
       color="WHITE"
     >
       a
@@ -738,14 +738,14 @@ Array [
     </div>
   </div>,
   <div
-    className="css-15k27lr"
+    className="css-1ojhaft"
     color="BLACK"
-    onClick={[Function]}
+    selected={false}
     x="b"
     y="2"
   >
     <div
-      className="css-1y32jx2"
+      className="css-85kkh5"
       color="BLACK"
     >
       b
@@ -753,14 +753,14 @@ Array [
     </div>
   </div>,
   <div
-    className="css-1495z7x"
+    className="css-14mmxv0"
     color="WHITE"
-    onClick={[Function]}
+    selected={false}
     x="c"
     y="2"
   >
     <div
-      className="css-1nwny1d"
+      className="css-1qigpt8"
       color="WHITE"
     >
       c
@@ -768,14 +768,14 @@ Array [
     </div>
   </div>,
   <div
-    className="css-15k27lr"
+    className="css-1ojhaft"
     color="BLACK"
-    onClick={[Function]}
+    selected={false}
     x="d"
     y="2"
   >
     <div
-      className="css-1y32jx2"
+      className="css-85kkh5"
       color="BLACK"
     >
       d
@@ -783,14 +783,14 @@ Array [
     </div>
   </div>,
   <div
-    className="css-1495z7x"
+    className="css-14mmxv0"
     color="WHITE"
-    onClick={[Function]}
+    selected={false}
     x="e"
     y="2"
   >
     <div
-      className="css-1nwny1d"
+      className="css-1qigpt8"
       color="WHITE"
     >
       e
@@ -798,14 +798,14 @@ Array [
     </div>
   </div>,
   <div
-    className="css-15k27lr"
+    className="css-1ojhaft"
     color="BLACK"
-    onClick={[Function]}
+    selected={false}
     x="f"
     y="2"
   >
     <div
-      className="css-1y32jx2"
+      className="css-85kkh5"
       color="BLACK"
     >
       f
@@ -813,14 +813,14 @@ Array [
     </div>
   </div>,
   <div
-    className="css-1495z7x"
+    className="css-14mmxv0"
     color="WHITE"
-    onClick={[Function]}
+    selected={false}
     x="g"
     y="2"
   >
     <div
-      className="css-1nwny1d"
+      className="css-1qigpt8"
       color="WHITE"
     >
       g
@@ -828,14 +828,14 @@ Array [
     </div>
   </div>,
   <div
-    className="css-15k27lr"
+    className="css-1ojhaft"
     color="BLACK"
-    onClick={[Function]}
+    selected={false}
     x="h"
     y="2"
   >
     <div
-      className="css-1y32jx2"
+      className="css-85kkh5"
       color="BLACK"
     >
       h
@@ -843,14 +843,14 @@ Array [
     </div>
   </div>,
   <div
-    className="css-15k27lr"
+    className="css-1ojhaft"
     color="BLACK"
-    onClick={[Function]}
+    selected={false}
     x="a"
     y="1"
   >
     <div
-      className="css-1y32jx2"
+      className="css-85kkh5"
       color="BLACK"
     >
       a
@@ -858,14 +858,14 @@ Array [
     </div>
   </div>,
   <div
-    className="css-1495z7x"
+    className="css-14mmxv0"
     color="WHITE"
-    onClick={[Function]}
+    selected={false}
     x="b"
     y="1"
   >
     <div
-      className="css-1nwny1d"
+      className="css-1qigpt8"
       color="WHITE"
     >
       b
@@ -873,14 +873,14 @@ Array [
     </div>
   </div>,
   <div
-    className="css-15k27lr"
+    className="css-1ojhaft"
     color="BLACK"
-    onClick={[Function]}
+    selected={false}
     x="c"
     y="1"
   >
     <div
-      className="css-1y32jx2"
+      className="css-85kkh5"
       color="BLACK"
     >
       c
@@ -888,14 +888,14 @@ Array [
     </div>
   </div>,
   <div
-    className="css-1495z7x"
+    className="css-14mmxv0"
     color="WHITE"
-    onClick={[Function]}
+    selected={false}
     x="d"
     y="1"
   >
     <div
-      className="css-1nwny1d"
+      className="css-1qigpt8"
       color="WHITE"
     >
       d
@@ -903,14 +903,14 @@ Array [
     </div>
   </div>,
   <div
-    className="css-15k27lr"
+    className="css-1ojhaft"
     color="BLACK"
-    onClick={[Function]}
+    selected={false}
     x="e"
     y="1"
   >
     <div
-      className="css-1y32jx2"
+      className="css-85kkh5"
       color="BLACK"
     >
       e
@@ -918,14 +918,14 @@ Array [
     </div>
   </div>,
   <div
-    className="css-1495z7x"
+    className="css-14mmxv0"
     color="WHITE"
-    onClick={[Function]}
+    selected={false}
     x="f"
     y="1"
   >
     <div
-      className="css-1nwny1d"
+      className="css-1qigpt8"
       color="WHITE"
     >
       f
@@ -933,14 +933,14 @@ Array [
     </div>
   </div>,
   <div
-    className="css-15k27lr"
+    className="css-1ojhaft"
     color="BLACK"
-    onClick={[Function]}
+    selected={false}
     x="g"
     y="1"
   >
     <div
-      className="css-1y32jx2"
+      className="css-85kkh5"
       color="BLACK"
     >
       g
@@ -948,14 +948,14 @@ Array [
     </div>
   </div>,
   <div
-    className="css-1495z7x"
+    className="css-14mmxv0"
     color="WHITE"
-    onClick={[Function]}
+    selected={false}
     x="h"
     y="1"
   >
     <div
-      className="css-1nwny1d"
+      className="css-1qigpt8"
       color="WHITE"
     >
       h
