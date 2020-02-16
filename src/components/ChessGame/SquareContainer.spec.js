@@ -12,34 +12,34 @@ standardComponentTest(SquareContainer, {
   square: { color: "WHITE", x: "a", y: "3", highlighted: false }
 });
 
-test('handleClick', done => {
+test("handleClick", done => {
   const square = {
-    x: 'b',
-    y: '4'
+    x: "b",
+    y: "4"
   };
 
   const selection = {
-    x: 'b',
-    y: '2',
-    color: "WHITE",
+    x: "b",
+    y: "2",
+    color: "WHITE"
   };
 
   const piece = null;
 
   const pieceMoved = (...args) => {
-    expect(args).toEqual(['b', '2', 'b', '4'])
+    expect(args).toEqual(["b", "2", "b", "4"]);
     done();
   };
 
   const event = {};
 
-  handleClick(pieceMoved, selection, piece, square, event);
+  handleClick(pieceMoved, selection, piece, square)();
 });
 
-test('handleClick should not be called when there is no selection', () => {
+test("handleClick should not be called when there is no selection", () => {
   const square = {
-    x: 'b',
-    y: '4'
+    x: "b",
+    y: "4"
   };
 
   const selection = null;
@@ -53,20 +53,20 @@ test('handleClick should not be called when there is no selection', () => {
   expect(pieceMoved).not.toHaveBeenCalled();
 });
 
-test('handleClick should not be called when the selection and the piece at destination have the same color', () => {
+test("handleClick should not be called when the selection and the piece at destination have the same color", () => {
   const square = {
-    x: 'b',
-    y: '4'
+    x: "b",
+    y: "4"
   };
 
   const selection = {
-    x: 'b',
-    y: '2',
+    x: "b",
+    y: "2",
     color: "WHITE"
   };
 
   const piece = {
-    color: "WHITE",
+    color: "WHITE"
   };
 
   const pieceMoved = jest.fn();
@@ -76,22 +76,22 @@ test('handleClick should not be called when the selection and the piece at desti
   expect(pieceMoved).not.toHaveBeenCalled();
 });
 
-test('handleClick should not be called if the square is where the selected piece is', () => {
+test("handleClick should not be called if the square is where the selected piece is", () => {
   const square = {
-    x: 'b',
-    y: '2'
+    x: "b",
+    y: "2"
   };
 
   const selection = {
-    x: 'b',
-    y: '2',
+    x: "b",
+    y: "2",
     color: "WHITE"
   };
 
   const piece = {
-    x: 'b',
-    y: '2',
-    color: "WHITE",
+    x: "b",
+    y: "2",
+    color: "WHITE"
   };
 
   const pieceMoved = jest.fn();

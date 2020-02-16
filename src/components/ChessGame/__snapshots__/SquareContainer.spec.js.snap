@@ -4,6 +4,7 @@ exports[`renders <SquareContainer /> 1`] = `
 <div
   className="css-14mmxv0"
   color="WHITE"
+  onClick={[Function]}
   selected={false}
   x="b"
   y="3"
@@ -22,6 +23,7 @@ exports[`renders <SquareContainer /> 2`] = `
 <div
   className="css-14mmxv0"
   color="WHITE"
+  onClick={[Function]}
   selected={false}
   x="a"
   y="3"

@@ -17,6 +17,7 @@ Array [
     <div
       className="css-14mmxv0"
       color="WHITE"
+      onClick={[Function]}
       selected={false}
       x="a"
       y="8"
@@ -32,6 +33,7 @@ Array [
     <div
       className="css-1ojhaft"
       color="BLACK"
+      onClick={[Function]}
       selected={false}
       x="b"
       y="8"
@@ -47,6 +49,7 @@ Array [
     <div
       className="css-14mmxv0"
       color="WHITE"
+      onClick={[Function]}
       selected={false}
       x="c"
       y="8"
@@ -62,6 +65,7 @@ Array [
     <div
       className="css-1ojhaft"
       color="BLACK"
+      onClick={[Function]}
       selected={false}
       x="d"
       y="8"
@@ -77,6 +81,7 @@ Array [
     <div
       className="css-14mmxv0"
       color="WHITE"
+      onClick={[Function]}
       selected={false}
       x="e"
       y="8"
@@ -92,6 +97,7 @@ Array [
     <div
       className="css-1ojhaft"
       color="BLACK"
+      onClick={[Function]}
       selected={false}
       x="f"
       y="8"
@@ -107,6 +113,7 @@ Array [
     <div
       className="css-14mmxv0"
       color="WHITE"
+      onClick={[Function]}
       selected={false}
       x="g"
       y="8"
@@ -122,6 +129,7 @@ Array [
     <div
       className="css-1ojhaft"
       color="BLACK"
+      onClick={[Function]}
       selected={false}
       x="h"
       y="8"
@@ -137,6 +145,7 @@ Array [
     <div
       className="css-1ojhaft"
       color="BLACK"
+      onClick={[Function]}
       selected={false}
       x="a"
       y="7"
@@ -152,6 +161,7 @@ Array [
     <div
       className="css-14mmxv0"
       color="WHITE"
+      onClick={[Function]}
       selected={false}
       x="b"
       y="7"
@@ -167,6 +177,7 @@ Array [
     <div
       className="css-1ojhaft"
       color="BLACK"
+      onClick={[Function]}
       selected={false}
       x="c"
       y="7"
@@ -182,6 +193,7 @@ Array [
     <div
       className="css-14mmxv0"
       color="WHITE"
+      onClick={[Function]}
       selected={false}
       x="d"
       y="7"
@@ -197,6 +209,7 @@ Array [
     <div
       className="css-1ojhaft"
       color="BLACK"
+      onClick={[Function]}
       selected={false}
       x="e"
       y="7"
@@ -212,6 +225,7 @@ Array [
     <div
       className="css-14mmxv0"
       color="WHITE"
+      onClick={[Function]}
       selected={false}
       x="f"
       y="7"
@@ -227,6 +241,7 @@ Array [
     <div
       className="css-1ojhaft"
       color="BLACK"
+      onClick={[Function]}
       selected={false}
       x="g"
       y="7"
@@ -242,6 +257,7 @@ Array [
     <div
       className="css-14mmxv0"
       color="WHITE"
+      onClick={[Function]}
       selected={false}
       x="h"
       y="7"
@@ -257,6 +273,7 @@ Array [
     <div
       className="css-14mmxv0"
       color="WHITE"
+      onClick={[Function]}
       selected={false}
       x="a"
       y="6"
@@ -272,6 +289,7 @@ Array [
     <div
       className="css-1ojhaft"
       color="BLACK"
+      onClick={[Function]}
       selected={false}
       x="b"
       y="6"
@@ -287,6 +305,7 @@ Array [
     <div
       className="css-14mmxv0"
       color="WHITE"
+      onClick={[Function]}
       selected={false}
       x="c"
       y="6"
@@ -302,6 +321,7 @@ Array [
     <div
       className="css-1ojhaft"
       color="BLACK"
+      onClick={[Function]}
       selected={false}
       x="d"
       y="6"
@@ -317,6 +337,7 @@ Array [
     <div
       className="css-14mmxv0"
       color="WHITE"
+      onClick={[Function]}
       selected={false}
       x="e"
       y="6"
@@ -332,6 +353,7 @@ Array [
     <div
       className="css-1ojhaft"
       color="BLACK"
+      onClick={[Function]}
       selected={false}
       x="f"
       y="6"
@@ -347,6 +369,7 @@ Array [
     <div
       className="css-14mmxv0"
       color="WHITE"
+      onClick={[Function]}
       selected={false}
       x="g"
       y="6"
@@ -362,6 +385,7 @@ Array [
     <div
       className="css-1ojhaft"
       color="BLACK"
+      onClick={[Function]}
       selected={false}
       x="h"
       y="6"
@@ -377,6 +401,7 @@ Array [
     <div
       className="css-1ojhaft"
       color="BLACK"
+      onClick={[Function]}
       selected={false}
       x="a"
       y="5"
@@ -392,6 +417,7 @@ Array [
     <div
       className="css-14mmxv0"
       color="WHITE"
+      onClick={[Function]}
       selected={false}
       x="b"
       y="5"
@@ -407,6 +433,7 @@ Array [
     <div
       className="css-1ojhaft"
       color="BLACK"
+      onClick={[Function]}
       selected={false}
       x="c"
       y="5"
@@ -422,6 +449,7 @@ Array [
     <div
       className="css-14mmxv0"
       color="WHITE"
+      onClick={[Function]}
       selected={false}
       x="d"
       y="5"
@@ -437,6 +465,7 @@ Array [
     <div
       className="css-1ojhaft"
       color="BLACK"
+      onClick={[Function]}
       selected={false}
       x="e"
       y="5"
@@ -452,6 +481,7 @@ Array [
     <div
       className="css-14mmxv0"
       color="WHITE"
+      onClick={[Function]}
       selected={false}
       x="f"
       y="5"
@@ -467,6 +497,7 @@ Array [
     <div
       className="css-1ojhaft"
       color="BLACK"
+      onClick={[Function]}
       selected={false}
       x="g"
       y="5"
@@ -482,6 +513,7 @@ Array [
     <div
       className="css-14mmxv0"
       color="WHITE"
+      onClick={[Function]}
       selected={false}
       x="h"
       y="5"
@@ -497,6 +529,7 @@ Array [
     <div
       className="css-14mmxv0"
       color="WHITE"
+      onClick={[Function]}
       selected={false}
       x="a"
       y="4"
@@ -512,6 +545,7 @@ Array [
     <div
       className="css-1ojhaft"
       color="BLACK"
+      onClick={[Function]}
       selected={false}
       x="b"
       y="4"
@@ -527,6 +561,7 @@ Array [
     <div
       className="css-14mmxv0"
       color="WHITE"
+      onClick={[Function]}
       selected={false}
       x="c"
       y="4"
@@ -542,6 +577,7 @@ Array [
     <div
       className="css-1ojhaft"
       color="BLACK"
+      onClick={[Function]}
       selected={false}
       x="d"
       y="4"
@@ -557,6 +593,7 @@ Array [
     <div
       className="css-14mmxv0"
       color="WHITE"
+      onClick={[Function]}
       selected={false}
       x="e"
       y="4"
@@ -572,6 +609,7 @@ Array [
     <div
       className="css-1ojhaft"
       color="BLACK"
+      onClick={[Function]}
       selected={false}
       x="f"
       y="4"
@@ -587,6 +625,7 @@ Array [
     <div
       className="css-14mmxv0"
       color="WHITE"
+      onClick={[Function]}
       selected={false}
       x="g"
       y="4"
@@ -602,6 +641,7 @@ Array [
     <div
       className="css-1ojhaft"
       color="BLACK"
+      onClick={[Function]}
       selected={false}
       x="h"
       y="4"
@@ -617,6 +657,7 @@ Array [
     <div
       className="css-1ojhaft"
       color="BLACK"
+      onClick={[Function]}
       selected={false}
       x="a"
       y="3"
@@ -632,6 +673,7 @@ Array [
     <div
       className="css-14mmxv0"
       color="WHITE"
+      onClick={[Function]}
       selected={false}
       x="b"
       y="3"
@@ -647,6 +689,7 @@ Array [
     <div
       className="css-1ojhaft"
       color="BLACK"
+      onClick={[Function]}
       selected={false}
       x="c"
       y="3"
@@ -662,6 +705,7 @@ Array [
     <div
       className="css-14mmxv0"
       color="WHITE"
+      onClick={[Function]}
       selected={false}
       x="d"
       y="3"
@@ -677,6 +721,7 @@ Array [
     <div
       className="css-1ojhaft"
       color="BLACK"
+      onClick={[Function]}
       selected={false}
       x="e"
       y="3"
@@ -692,6 +737,7 @@ Array [
     <div
       className="css-14mmxv0"
       color="WHITE"
+      onClick={[Function]}
       selected={false}
       x="f"
       y="3"
@@ -707,6 +753,7 @@ Array [
     <div
       className="css-1ojhaft"
       color="BLACK"
+      onClick={[Function]}
       selected={false}
       x="g"
       y="3"
@@ -722,6 +769,7 @@ Array [
     <div
       className="css-14mmxv0"
       color="WHITE"
+      onClick={[Function]}
       selected={false}
       x="h"
       y="3"
@@ -737,6 +785,7 @@ Array [
     <div
       className="css-14mmxv0"
       color="WHITE"
+      onClick={[Function]}
       selected={false}
       x="a"
       y="2"
@@ -752,6 +801,7 @@ Array [
     <div
       className="css-1ojhaft"
       color="BLACK"
+      onClick={[Function]}
       selected={false}
       x="b"
       y="2"
@@ -767,6 +817,7 @@ Array [
     <div
       className="css-14mmxv0"
       color="WHITE"
+      onClick={[Function]}
       selected={false}
       x="c"
       y="2"
@@ -782,6 +833,7 @@ Array [
     <div
       className="css-1ojhaft"
       color="BLACK"
+      onClick={[Function]}
       selected={false}
       x="d"
       y="2"
@@ -797,6 +849,7 @@ Array [
     <div
       className="css-14mmxv0"
       color="WHITE"
+      onClick={[Function]}
       selected={false}
       x="e"
       y="2"
@@ -812,6 +865,7 @@ Array [
     <div
       className="css-1ojhaft"
       color="BLACK"
+      onClick={[Function]}
       selected={false}
       x="f"
       y="2"
@@ -827,6 +881,7 @@ Array [
     <div
       className="css-14mmxv0"
       color="WHITE"
+      onClick={[Function]}
       selected={false}
       x="g"
       y="2"
@@ -842,6 +897,7 @@ Array [
     <div
       className="css-1ojhaft"
       color="BLACK"
+      onClick={[Function]}
       selected={false}
       x="h"
       y="2"
@@ -857,6 +913,7 @@ Array [
     <div
       className="css-1ojhaft"
       color="BLACK"
+      onClick={[Function]}
       selected={false}
       x="a"
       y="1"
@@ -872,6 +929,7 @@ Array [
     <div
       className="css-14mmxv0"
       color="WHITE"
+      onClick={[Function]}
       selected={false}
       x="b"
       y="1"
@@ -887,6 +945,7 @@ Array [
     <div
       className="css-1ojhaft"
       color="BLACK"
+      onClick={[Function]}
       selected={false}
       x="c"
       y="1"
@@ -902,6 +961,7 @@ Array [
     <div
       className="css-14mmxv0"
       color="WHITE"
+      onClick={[Function]}
       selected={false}
       x="d"
       y="1"
@@ -917,6 +977,7 @@ Array [
     <div
       className="css-1ojhaft"
       color="BLACK"
+      onClick={[Function]}
       selected={false}
       x="e"
       y="1"
@@ -932,6 +993,7 @@ Array [
     <div
       className="css-14mmxv0"
       color="WHITE"
+      onClick={[Function]}
       selected={false}
       x="f"
       y="1"
@@ -947,6 +1009,7 @@ Array [
     <div
       className="css-1ojhaft"
       color="BLACK"
+      onClick={[Function]}
       selected={false}
       x="g"
       y="1"
@@ -962,6 +1025,7 @@ Array [
     <div
       className="css-14mmxv0"
       color="WHITE"
+      onClick={[Function]}
       selected={false}
       x="h"
       y="1"

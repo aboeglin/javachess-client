@@ -18,10 +18,12 @@ const isSelected = curry(
 
 const getSelectionColor = selection => (selection ? selection.color : false);
 
-export const handleClick = curry((piecedMoved, selection, piece, square) => {
-  if(selection && (!piece || selection.color !== piece.color))
-    piecedMoved(selection.x, selection.y, square.x, square.y)
-});
+export const handleClick = curry(
+  (piecedMoved, selection, piece, square) => () => {
+    if (selection && (!piece || selection.color !== piece.color))
+      piecedMoved(selection.x, selection.y, square.x, square.y);
+  }
+);
 
 export const SquareContainer = ({ square, pieces, pieceMoved, selection }) =>
   pipe(getPieceAtSquare(pieces), piece => (
@@ -33,7 +35,7 @@ export const SquareContainer = ({ square, pieces, pieceMoved, selection }) =>
       highlighted={square.highlighted}
       selected={isSelected(selection, square)}
       selectionColor={getSelectionColor(selection)}
-      onClick={handleClick(pieceMoved, selection, piece, square)}
+      onClick={() => handleClick(pieceMoved, selection, piece, square)}
     >
       <SquareLabel color={square.color}>
         {square.x}
