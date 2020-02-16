@@ -33,7 +33,7 @@ test("handleClick", done => {
 
   const event = {};
 
-  handleClick(pieceMoved, selection, piece, square)();
+  handleClick(pieceMoved, selection, piece, square)(event);
 });
 
 test("handleClick should not be called when there is no selection", () => {
@@ -49,7 +49,7 @@ test("handleClick should not be called when there is no selection", () => {
   const pieceMoved = jest.fn();
 
   const event = {};
-  handleClick(pieceMoved, selection, piece, square, event);
+  handleClick(pieceMoved, selection, piece, square)(event);
   expect(pieceMoved).not.toHaveBeenCalled();
 });
 
@@ -72,7 +72,7 @@ test("handleClick should not be called when the selection and the piece at desti
   const pieceMoved = jest.fn();
 
   const event = {};
-  handleClick(pieceMoved, selection, piece, square, event);
+  handleClick(pieceMoved, selection, piece, square)(event);
   expect(pieceMoved).not.toHaveBeenCalled();
 });
 
@@ -97,6 +97,6 @@ test("handleClick should not be called if the square is where the selected piece
   const pieceMoved = jest.fn();
 
   const event = {};
-  handleClick(pieceMoved, selection, piece, square, event);
+  handleClick(pieceMoved, selection, piece, square)(event);
   expect(pieceMoved).not.toHaveBeenCalled();
 });

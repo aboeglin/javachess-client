@@ -35,7 +35,7 @@ export const SquareContainer = ({ square, pieces, pieceMoved, selection }) =>
       highlighted={square.highlighted}
       selected={isSelected(selection, square)}
       selectionColor={getSelectionColor(selection)}
-      onClick={() => handleClick(pieceMoved, selection, piece, square)}
+      onClick={handleClick(pieceMoved, selection, piece, square)}
     >
       <SquareLabel color={square.color}>
         {square.x}
