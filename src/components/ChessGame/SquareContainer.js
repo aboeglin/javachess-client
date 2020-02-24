@@ -16,8 +16,6 @@ const isSelected = curry(
     square.y === propOr(false, "y", selection)
 );
 
-const getSelectionColor = selection => (selection ? selection.color : false);
-
 export const handleClick = curry(
   (piecedMoved, selection, piece, square) => () => {
     if (selection && (!piece || selection.color !== piece.color))
@@ -25,7 +23,13 @@ export const handleClick = curry(
   }
 );
 
-export const SquareContainer = ({ square, pieces, pieceMoved, selection }) =>
+export const SquareContainer = ({
+  square,
+  pieces,
+  pieceMoved,
+  selection,
+  activePlayerColor
+}) =>
   pipe(getPieceAtSquare(pieces), piece => (
     <Square
       color={square.color}
@@ -34,7 +38,7 @@ export const SquareContainer = ({ square, pieces, pieceMoved, selection }) =>
       key={`${square.x}${square.y}`}
       highlighted={square.highlighted}
       selected={isSelected(selection, square)}
-      selectionColor={getSelectionColor(selection)}
+      selectionColor={activePlayerColor}
       onClick={handleClick(pieceMoved, selection, piece, square)}
     >
       <SquareLabel color={square.color}>
