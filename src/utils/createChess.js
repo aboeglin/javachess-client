@@ -77,7 +77,8 @@ const handleGameReadyReceived = curry((update, message) =>
 );
 
 const createChess = () => {
-  const socket = new SockJS("http://localhost:8080/ws");
+  const endpoint = process.env.GATSBY_SOCKET_ENDPOINT || "http://localhost:8080/ws";
+  const socket = new SockJS(endpoint);
   const ws = Stomp.over(socket);
   ws.debug = null; // Remove debug messages for socket communication
 
