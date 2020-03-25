@@ -1,0 +1,9 @@
+node_modules
+.dependabot
+.circleci
+public
+perf
+.cache
+stories
+__mocks__
+.eslintrc
