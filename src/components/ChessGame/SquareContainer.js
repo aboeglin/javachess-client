@@ -1,16 +1,35 @@
 import React from "react";
 import { PropTypes } from "prop-types";
-import { curry, find, pipe } from "ramda";
+import { curry, find, pipe, propOr } from "ramda";
 
 import Piece from "./Piece";
 import { Square, SquareLabel } from "./styled";
 import withChess from "../../hoc/withChess";
 
 const getPieceAtSquare = curry((pieces, square) =>
-  find(({ x, y }) => x === square.x && y === square.y, pieces)
+  find(({ x, y }) => x === square.x && y === square.y)(pieces)
 );
 
-export const SquareContainer = ({ square, pieces, pieceMoved, selection }) =>
+const isSelected = curry(
+  (selection, square) =>
+    square.x === propOr(false, "x", selection) &&
+    square.y === propOr(false, "y", selection)
+);
+
+export const handleClick = curry(
+  (piecedMoved, selection, piece, square) => () => {
+    if (selection && (!piece || selection.color !== piece.color))
+      piecedMoved(selection.x, selection.y, square.x, square.y);
+  }
+);
+
+export const SquareContainer = ({
+  square,
+  pieces,
+  pieceMoved,
+  selection,
+  activePlayerColor
+}) =>
   pipe(getPieceAtSquare(pieces), piece => (
     <Square
       color={square.color}
@@ -18,16 +37,9 @@ export const SquareContainer = ({ square, pieces, pieceMoved, selection }) =>
       y={square.y}
       key={`${square.x}${square.y}`}
       highlighted={square.highlighted}
-      onClick={() => {
-        if (
-          selection &&
-          (selection.x !== square.x || selection.y !== square.y)
-        ) {
-          if (!piece || piece.color !== selection.color) {
-            pieceMoved(selection.x, selection.y, square.x, square.y);
-          }
-        }
-      }}
+      selected={isSelected(selection, square)}
+      selectionColor={activePlayerColor}
+      onClick={handleClick(pieceMoved, selection, piece, square)}
     >
       <SquareLabel color={square.color}>
         {square.x}

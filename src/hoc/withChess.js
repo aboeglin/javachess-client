@@ -7,12 +7,14 @@ const withChess = Component => {
     const [state, setState] = useState({
       pieces: [],
       possibleMoves: [],
-      selection: null
+      selection: null,
+      playerColor: null,
+      activePlayerColor: "WHITE"
     });
     const chess = useContext(ChessContext);
 
     useEffect(() => {
-      chess.onStateChanged(setState);
+      return chess.onStateChanged(setState);
     }, []);
 
     return (
@@ -21,6 +23,8 @@ const withChess = Component => {
         pieces={state.pieces}
         selection={state.selection}
         possibleMoves={state.possibleMoves}
+        playerColor={state.playerColor}
+        activePlayerColor={state.activePlayerColor}
         pieceSelected={chess.pieceSelected}
         pieceMoved={chess.pieceMoved}
       />

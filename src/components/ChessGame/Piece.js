@@ -1,6 +1,6 @@
 import React from "react";
 
-import { pipe } from "ramda";
+import { curry, pipe } from "ramda";
 
 import { PieceContainer } from "./styled";
 
@@ -34,14 +34,32 @@ const getImageUrl = (type, color) =>
     WHITE_KING: WHITE_KING_IMAGE_URL
   }[`${color}_${type}`]);
 
-export const Piece = ({ piece, pieceSelected }) =>
+const handlePieceClicked = curry(
+  (piece, playerColor, activePlayerColor, pieceSelected) => () => {
+    if (piece.color === playerColor && activePlayerColor === playerColor) {
+      pieceSelected(piece);
+    }
+  }
+);
+
+export const Piece = ({
+  piece,
+  pieceSelected,
+  playerColor,
+  activePlayerColor
+}) =>
   pipe(
     ({ type, color }) => getImageUrl(type, color),
     url => (
       <PieceContainer
         type={piece.type}
         x={piece.x}
-        onClick={() => pieceSelected(piece)} // move that handler out of jsx
+        onClick={handlePieceClicked(
+          piece,
+          playerColor,
+          activePlayerColor,
+          pieceSelected
+        )}
       >
         <img src={url} />
       </PieceContainer>

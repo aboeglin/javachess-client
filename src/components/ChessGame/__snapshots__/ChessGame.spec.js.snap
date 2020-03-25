@@ -1,968 +1,1043 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`renders <ChessGame /> 1`] = `
-<div
-  className="css-4tc7x7"
->
+Array [
+  <div>
+    <h2>
+      You are 
+    </h2>
+    <h2>
+      Current turn: 
+      WHITE
+    </h2>
+  </div>,
   <div
-    className="css-1495z7x"
-    color="WHITE"
-    onClick={[Function]}
-    x="a"
-    y="8"
+    className="css-17rd1i1"
   >
     <div
-      className="css-1nwny1d"
+      className="css-14mmxv0"
       color="WHITE"
+      onClick={[Function]}
+      selected={false}
+      x="a"
+      y="8"
     >
-      a
-      8
+      <div
+        className="css-1qigpt8"
+        color="WHITE"
+      >
+        a
+        8
+      </div>
     </div>
-  </div>
-  <div
-    className="css-15k27lr"
-    color="BLACK"
-    onClick={[Function]}
-    x="b"
-    y="8"
-  >
     <div
-      className="css-1y32jx2"
+      className="css-1ojhaft"
       color="BLACK"
+      onClick={[Function]}
+      selected={false}
+      x="b"
+      y="8"
     >
-      b
-      8
+      <div
+        className="css-85kkh5"
+        color="BLACK"
+      >
+        b
+        8
+      </div>
     </div>
-  </div>
-  <div
-    className="css-1495z7x"
-    color="WHITE"
-    onClick={[Function]}
-    x="c"
-    y="8"
-  >
     <div
-      className="css-1nwny1d"
+      className="css-14mmxv0"
       color="WHITE"
+      onClick={[Function]}
+      selected={false}
+      x="c"
+      y="8"
     >
-      c
-      8
+      <div
+        className="css-1qigpt8"
+        color="WHITE"
+      >
+        c
+        8
+      </div>
     </div>
-  </div>
-  <div
-    className="css-15k27lr"
-    color="BLACK"
-    onClick={[Function]}
-    x="d"
-    y="8"
-  >
     <div
-      className="css-1y32jx2"
+      className="css-1ojhaft"
       color="BLACK"
+      onClick={[Function]}
+      selected={false}
+      x="d"
+      y="8"
     >
-      d
-      8
+      <div
+        className="css-85kkh5"
+        color="BLACK"
+      >
+        d
+        8
+      </div>
     </div>
-  </div>
-  <div
-    className="css-1495z7x"
-    color="WHITE"
-    onClick={[Function]}
-    x="e"
-    y="8"
-  >
     <div
-      className="css-1nwny1d"
+      className="css-14mmxv0"
       color="WHITE"
+      onClick={[Function]}
+      selected={false}
+      x="e"
+      y="8"
     >
-      e
-      8
+      <div
+        className="css-1qigpt8"
+        color="WHITE"
+      >
+        e
+        8
+      </div>
     </div>
-  </div>
-  <div
-    className="css-15k27lr"
-    color="BLACK"
-    onClick={[Function]}
-    x="f"
-    y="8"
-  >
     <div
-      className="css-1y32jx2"
+      className="css-1ojhaft"
       color="BLACK"
+      onClick={[Function]}
+      selected={false}
+      x="f"
+      y="8"
     >
-      f
-      8
+      <div
+        className="css-85kkh5"
+        color="BLACK"
+      >
+        f
+        8
+      </div>
     </div>
-  </div>
-  <div
-    className="css-1495z7x"
-    color="WHITE"
-    onClick={[Function]}
-    x="g"
-    y="8"
-  >
     <div
-      className="css-1nwny1d"
+      className="css-14mmxv0"
       color="WHITE"
+      onClick={[Function]}
+      selected={false}
+      x="g"
+      y="8"
     >
-      g
-      8
+      <div
+        className="css-1qigpt8"
+        color="WHITE"
+      >
+        g
+        8
+      </div>
     </div>
-  </div>
-  <div
-    className="css-15k27lr"
-    color="BLACK"
-    onClick={[Function]}
-    x="h"
-    y="8"
-  >
     <div
-      className="css-1y32jx2"
+      className="css-1ojhaft"
       color="BLACK"
+      onClick={[Function]}
+      selected={false}
+      x="h"
+      y="8"
     >
-      h
-      8
+      <div
+        className="css-85kkh5"
+        color="BLACK"
+      >
+        h
+        8
+      </div>
     </div>
-  </div>
-  <div
-    className="css-15k27lr"
-    color="BLACK"
-    onClick={[Function]}
-    x="a"
-    y="7"
-  >
     <div
-      className="css-1y32jx2"
+      className="css-1ojhaft"
       color="BLACK"
+      onClick={[Function]}
+      selected={false}
+      x="a"
+      y="7"
     >
-      a
-      7
+      <div
+        className="css-85kkh5"
+        color="BLACK"
+      >
+        a
+        7
+      </div>
     </div>
-  </div>
-  <div
-    className="css-1495z7x"
-    color="WHITE"
-    onClick={[Function]}
-    x="b"
-    y="7"
-  >
     <div
-      className="css-1nwny1d"
+      className="css-14mmxv0"
       color="WHITE"
+      onClick={[Function]}
+      selected={false}
+      x="b"
+      y="7"
     >
-      b
-      7
+      <div
+        className="css-1qigpt8"
+        color="WHITE"
+      >
+        b
+        7
+      </div>
     </div>
-  </div>
-  <div
-    className="css-15k27lr"
-    color="BLACK"
-    onClick={[Function]}
-    x="c"
-    y="7"
-  >
     <div
-      className="css-1y32jx2"
+      className="css-1ojhaft"
       color="BLACK"
+      onClick={[Function]}
+      selected={false}
+      x="c"
+      y="7"
     >
-      c
-      7
+      <div
+        className="css-85kkh5"
+        color="BLACK"
+      >
+        c
+        7
+      </div>
     </div>
-  </div>
-  <div
-    className="css-1495z7x"
-    color="WHITE"
-    onClick={[Function]}
-    x="d"
-    y="7"
-  >
     <div
-      className="css-1nwny1d"
+      className="css-14mmxv0"
       color="WHITE"
+      onClick={[Function]}
+      selected={false}
+      x="d"
+      y="7"
     >
-      d
-      7
+      <div
+        className="css-1qigpt8"
+        color="WHITE"
+      >
+        d
+        7
+      </div>
     </div>
-  </div>
-  <div
-    className="css-15k27lr"
-    color="BLACK"
-    onClick={[Function]}
-    x="e"
-    y="7"
-  >
     <div
-      className="css-1y32jx2"
+      className="css-1ojhaft"
       color="BLACK"
+      onClick={[Function]}
+      selected={false}
+      x="e"
+      y="7"
     >
-      e
-      7
+      <div
+        className="css-85kkh5"
+        color="BLACK"
+      >
+        e
+        7
+      </div>
     </div>
-  </div>
-  <div
-    className="css-1495z7x"
-    color="WHITE"
-    onClick={[Function]}
-    x="f"
-    y="7"
-  >
     <div
-      className="css-1nwny1d"
+      className="css-14mmxv0"
       color="WHITE"
+      onClick={[Function]}
+      selected={false}
+      x="f"
+      y="7"
     >
-      f
-      7
+      <div
+        className="css-1qigpt8"
+        color="WHITE"
+      >
+        f
+        7
+      </div>
     </div>
-  </div>
-  <div
-    className="css-15k27lr"
-    color="BLACK"
-    onClick={[Function]}
-    x="g"
-    y="7"
-  >
     <div
-      className="css-1y32jx2"
+      className="css-1ojhaft"
       color="BLACK"
+      onClick={[Function]}
+      selected={false}
+      x="g"
+      y="7"
     >
-      g
-      7
+      <div
+        className="css-85kkh5"
+        color="BLACK"
+      >
+        g
+        7
+      </div>
     </div>
-  </div>
-  <div
-    className="css-1495z7x"
-    color="WHITE"
-    onClick={[Function]}
-    x="h"
-    y="7"
-  >
     <div
-      className="css-1nwny1d"
+      className="css-14mmxv0"
       color="WHITE"
+      onClick={[Function]}
+      selected={false}
+      x="h"
+      y="7"
     >
-      h
-      7
+      <div
+        className="css-1qigpt8"
+        color="WHITE"
+      >
+        h
+        7
+      </div>
     </div>
-  </div>
-  <div
-    className="css-1495z7x"
-    color="WHITE"
-    onClick={[Function]}
-    x="a"
-    y="6"
-  >
     <div
-      className="css-1nwny1d"
+      className="css-14mmxv0"
       color="WHITE"
+      onClick={[Function]}
+      selected={false}
+      x="a"
+      y="6"
     >
-      a
-      6
+      <div
+        className="css-1qigpt8"
+        color="WHITE"
+      >
+        a
+        6
+      </div>
     </div>
-  </div>
-  <div
-    className="css-15k27lr"
-    color="BLACK"
-    onClick={[Function]}
-    x="b"
-    y="6"
-  >
     <div
-      className="css-1y32jx2"
+      className="css-1ojhaft"
       color="BLACK"
+      onClick={[Function]}
+      selected={false}
+      x="b"
+      y="6"
     >
-      b
-      6
+      <div
+        className="css-85kkh5"
+        color="BLACK"
+      >
+        b
+        6
+      </div>
     </div>
-  </div>
-  <div
-    className="css-1495z7x"
-    color="WHITE"
-    onClick={[Function]}
-    x="c"
-    y="6"
-  >
     <div
-      className="css-1nwny1d"
+      className="css-14mmxv0"
       color="WHITE"
+      onClick={[Function]}
+      selected={false}
+      x="c"
+      y="6"
     >
-      c
-      6
+      <div
+        className="css-1qigpt8"
+        color="WHITE"
+      >
+        c
+        6
+      </div>
     </div>
-  </div>
-  <div
-    className="css-15k27lr"
-    color="BLACK"
-    onClick={[Function]}
-    x="d"
-    y="6"
-  >
     <div
-      className="css-1y32jx2"
+      className="css-1ojhaft"
       color="BLACK"
+      onClick={[Function]}
+      selected={false}
+      x="d"
+      y="6"
     >
-      d
-      6
+      <div
+        className="css-85kkh5"
+        color="BLACK"
+      >
+        d
+        6
+      </div>
     </div>
-  </div>
-  <div
-    className="css-1495z7x"
-    color="WHITE"
-    onClick={[Function]}
-    x="e"
-    y="6"
-  >
     <div
-      className="css-1nwny1d"
+      className="css-14mmxv0"
       color="WHITE"
+      onClick={[Function]}
+      selected={false}
+      x="e"
+      y="6"
     >
-      e
-      6
+      <div
+        className="css-1qigpt8"
+        color="WHITE"
+      >
+        e
+        6
+      </div>
     </div>
-  </div>
-  <div
-    className="css-15k27lr"
-    color="BLACK"
-    onClick={[Function]}
-    x="f"
-    y="6"
-  >
     <div
-      className="css-1y32jx2"
+      className="css-1ojhaft"
       color="BLACK"
+      onClick={[Function]}
+      selected={false}
+      x="f"
+      y="6"
     >
-      f
-      6
+      <div
+        className="css-85kkh5"
+        color="BLACK"
+      >
+        f
+        6
+      </div>
     </div>
-  </div>
-  <div
-    className="css-1495z7x"
-    color="WHITE"
-    onClick={[Function]}
-    x="g"
-    y="6"
-  >
     <div
-      className="css-1nwny1d"
+      className="css-14mmxv0"
       color="WHITE"
+      onClick={[Function]}
+      selected={false}
+      x="g"
+      y="6"
     >
-      g
-      6
+      <div
+        className="css-1qigpt8"
+        color="WHITE"
+      >
+        g
+        6
+      </div>
     </div>
-  </div>
-  <div
-    className="css-15k27lr"
-    color="BLACK"
-    onClick={[Function]}
-    x="h"
-    y="6"
-  >
     <div
-      className="css-1y32jx2"
+      className="css-1ojhaft"
       color="BLACK"
+      onClick={[Function]}
+      selected={false}
+      x="h"
+      y="6"
     >
-      h
-      6
+      <div
+        className="css-85kkh5"
+        color="BLACK"
+      >
+        h
+        6
+      </div>
     </div>
-  </div>
-  <div
-    className="css-15k27lr"
-    color="BLACK"
-    onClick={[Function]}
-    x="a"
-    y="5"
-  >
     <div
-      className="css-1y32jx2"
+      className="css-1ojhaft"
       color="BLACK"
+      onClick={[Function]}
+      selected={false}
+      x="a"
+      y="5"
     >
-      a
-      5
+      <div
+        className="css-85kkh5"
+        color="BLACK"
+      >
+        a
+        5
+      </div>
     </div>
-  </div>
-  <div
-    className="css-1495z7x"
-    color="WHITE"
-    onClick={[Function]}
-    x="b"
-    y="5"
-  >
     <div
-      className="css-1nwny1d"
+      className="css-14mmxv0"
       color="WHITE"
+      onClick={[Function]}
+      selected={false}
+      x="b"
+      y="5"
     >
-      b
-      5
+      <div
+        className="css-1qigpt8"
+        color="WHITE"
+      >
+        b
+        5
+      </div>
     </div>
-  </div>
-  <div
-    className="css-15k27lr"
-    color="BLACK"
-    onClick={[Function]}
-    x="c"
-    y="5"
-  >
     <div
-      className="css-1y32jx2"
+      className="css-1ojhaft"
       color="BLACK"
+      onClick={[Function]}
+      selected={false}
+      x="c"
+      y="5"
     >
-      c
-      5
+      <div
+        className="css-85kkh5"
+        color="BLACK"
+      >
+        c
+        5
+      </div>
     </div>
-  </div>
-  <div
-    className="css-1495z7x"
-    color="WHITE"
-    onClick={[Function]}
-    x="d"
-    y="5"
-  >
     <div
-      className="css-1nwny1d"
+      className="css-14mmxv0"
       color="WHITE"
+      onClick={[Function]}
+      selected={false}
+      x="d"
+      y="5"
     >
-      d
-      5
+      <div
+        className="css-1qigpt8"
+        color="WHITE"
+      >
+        d
+        5
+      </div>
     </div>
-  </div>
-  <div
-    className="css-15k27lr"
-    color="BLACK"
-    onClick={[Function]}
-    x="e"
-    y="5"
-  >
     <div
-      className="css-1y32jx2"
+      className="css-1ojhaft"
       color="BLACK"
+      onClick={[Function]}
+      selected={false}
+      x="e"
+      y="5"
     >
-      e
-      5
+      <div
+        className="css-85kkh5"
+        color="BLACK"
+      >
+        e
+        5
+      </div>
     </div>
-  </div>
-  <div
-    className="css-1495z7x"
-    color="WHITE"
-    onClick={[Function]}
-    x="f"
-    y="5"
-  >
     <div
-      className="css-1nwny1d"
+      className="css-14mmxv0"
       color="WHITE"
+      onClick={[Function]}
+      selected={false}
+      x="f"
+      y="5"
     >
-      f
-      5
+      <div
+        className="css-1qigpt8"
+        color="WHITE"
+      >
+        f
+        5
+      </div>
     </div>
-  </div>
-  <div
-    className="css-15k27lr"
-    color="BLACK"
-    onClick={[Function]}
-    x="g"
-    y="5"
-  >
     <div
-      className="css-1y32jx2"
+      className="css-1ojhaft"
       color="BLACK"
+      onClick={[Function]}
+      selected={false}
+      x="g"
+      y="5"
     >
-      g
-      5
+      <div
+        className="css-85kkh5"
+        color="BLACK"
+      >
+        g
+        5
+      </div>
     </div>
-  </div>
-  <div
-    className="css-1495z7x"
-    color="WHITE"
-    onClick={[Function]}
-    x="h"
-    y="5"
-  >
     <div
-      className="css-1nwny1d"
+      className="css-14mmxv0"
       color="WHITE"
+      onClick={[Function]}
+      selected={false}
+      x="h"
+      y="5"
     >
-      h
-      5
+      <div
+        className="css-1qigpt8"
+        color="WHITE"
+      >
+        h
+        5
+      </div>
     </div>
-  </div>
-  <div
-    className="css-1495z7x"
-    color="WHITE"
-    onClick={[Function]}
-    x="a"
-    y="4"
-  >
     <div
-      className="css-1nwny1d"
+      className="css-14mmxv0"
       color="WHITE"
+      onClick={[Function]}
+      selected={false}
+      x="a"
+      y="4"
     >
-      a
-      4
+      <div
+        className="css-1qigpt8"
+        color="WHITE"
+      >
+        a
+        4
+      </div>
     </div>
-  </div>
-  <div
-    className="css-15k27lr"
-    color="BLACK"
-    onClick={[Function]}
-    x="b"
-    y="4"
-  >
     <div
-      className="css-1y32jx2"
+      className="css-1ojhaft"
       color="BLACK"
+      onClick={[Function]}
+      selected={false}
+      x="b"
+      y="4"
     >
-      b
-      4
+      <div
+        className="css-85kkh5"
+        color="BLACK"
+      >
+        b
+        4
+      </div>
     </div>
-  </div>
-  <div
-    className="css-1495z7x"
-    color="WHITE"
-    onClick={[Function]}
-    x="c"
-    y="4"
-  >
     <div
-      className="css-1nwny1d"
+      className="css-14mmxv0"
       color="WHITE"
+      onClick={[Function]}
+      selected={false}
+      x="c"
+      y="4"
     >
-      c
-      4
+      <div
+        className="css-1qigpt8"
+        color="WHITE"
+      >
+        c
+        4
+      </div>
     </div>
-  </div>
-  <div
-    className="css-15k27lr"
-    color="BLACK"
-    onClick={[Function]}
-    x="d"
-    y="4"
-  >
     <div
-      className="css-1y32jx2"
+      className="css-1ojhaft"
       color="BLACK"
+      onClick={[Function]}
+      selected={false}
+      x="d"
+      y="4"
     >
-      d
-      4
+      <div
+        className="css-85kkh5"
+        color="BLACK"
+      >
+        d
+        4
+      </div>
     </div>
-  </div>
-  <div
-    className="css-1495z7x"
-    color="WHITE"
-    onClick={[Function]}
-    x="e"
-    y="4"
-  >
     <div
-      className="css-1nwny1d"
+      className="css-14mmxv0"
       color="WHITE"
+      onClick={[Function]}
+      selected={false}
+      x="e"
+      y="4"
     >
-      e
-      4
+      <div
+        className="css-1qigpt8"
+        color="WHITE"
+      >
+        e
+        4
+      </div>
     </div>
-  </div>
-  <div
-    className="css-15k27lr"
-    color="BLACK"
-    onClick={[Function]}
-    x="f"
-    y="4"
-  >
     <div
-      className="css-1y32jx2"
+      className="css-1ojhaft"
       color="BLACK"
+      onClick={[Function]}
+      selected={false}
+      x="f"
+      y="4"
     >
-      f
-      4
+      <div
+        className="css-85kkh5"
+        color="BLACK"
+      >
+        f
+        4
+      </div>
     </div>
-  </div>
-  <div
-    className="css-1495z7x"
-    color="WHITE"
-    onClick={[Function]}
-    x="g"
-    y="4"
-  >
     <div
-      className="css-1nwny1d"
+      className="css-14mmxv0"
       color="WHITE"
+      onClick={[Function]}
+      selected={false}
+      x="g"
+      y="4"
     >
-      g
-      4
+      <div
+        className="css-1qigpt8"
+        color="WHITE"
+      >
+        g
+        4
+      </div>
     </div>
-  </div>
-  <div
-    className="css-15k27lr"
-    color="BLACK"
-    onClick={[Function]}
-    x="h"
-    y="4"
-  >
     <div
-      className="css-1y32jx2"
+      className="css-1ojhaft"
       color="BLACK"
+      onClick={[Function]}
+      selected={false}
+      x="h"
+      y="4"
     >
-      h
-      4
+      <div
+        className="css-85kkh5"
+        color="BLACK"
+      >
+        h
+        4
+      </div>
     </div>
-  </div>
-  <div
-    className="css-15k27lr"
-    color="BLACK"
-    onClick={[Function]}
-    x="a"
-    y="3"
-  >
     <div
-      className="css-1y32jx2"
+      className="css-1ojhaft"
       color="BLACK"
+      onClick={[Function]}
+      selected={false}
+      x="a"
+      y="3"
     >
-      a
-      3
+      <div
+        className="css-85kkh5"
+        color="BLACK"
+      >
+        a
+        3
+      </div>
     </div>
-  </div>
-  <div
-    className="css-1495z7x"
-    color="WHITE"
-    onClick={[Function]}
-    x="b"
-    y="3"
-  >
     <div
-      className="css-1nwny1d"
+      className="css-14mmxv0"
       color="WHITE"
+      onClick={[Function]}
+      selected={false}
+      x="b"
+      y="3"
     >
-      b
-      3
+      <div
+        className="css-1qigpt8"
+        color="WHITE"
+      >
+        b
+        3
+      </div>
     </div>
-  </div>
-  <div
-    className="css-15k27lr"
-    color="BLACK"
-    onClick={[Function]}
-    x="c"
-    y="3"
-  >
     <div
-      className="css-1y32jx2"
+      className="css-1ojhaft"
       color="BLACK"
+      onClick={[Function]}
+      selected={false}
+      x="c"
+      y="3"
     >
-      c
-      3
+      <div
+        className="css-85kkh5"
+        color="BLACK"
+      >
+        c
+        3
+      </div>
     </div>
-  </div>
-  <div
-    className="css-1495z7x"
-    color="WHITE"
-    onClick={[Function]}
-    x="d"
-    y="3"
-  >
     <div
-      className="css-1nwny1d"
+      className="css-14mmxv0"
       color="WHITE"
+      onClick={[Function]}
+      selected={false}
+      x="d"
+      y="3"
     >
-      d
-      3
+      <div
+        className="css-1qigpt8"
+        color="WHITE"
+      >
+        d
+        3
+      </div>
     </div>
-  </div>
-  <div
-    className="css-15k27lr"
-    color="BLACK"
-    onClick={[Function]}
-    x="e"
-    y="3"
-  >
     <div
-      className="css-1y32jx2"
+      className="css-1ojhaft"
       color="BLACK"
+      onClick={[Function]}
+      selected={false}
+      x="e"
+      y="3"
     >
-      e
-      3
+      <div
+        className="css-85kkh5"
+        color="BLACK"
+      >
+        e
+        3
+      </div>
     </div>
-  </div>
-  <div
-    className="css-1495z7x"
-    color="WHITE"
-    onClick={[Function]}
-    x="f"
-    y="3"
-  >
     <div
-      className="css-1nwny1d"
+      className="css-14mmxv0"
       color="WHITE"
+      onClick={[Function]}
+      selected={false}
+      x="f"
+      y="3"
     >
-      f
-      3
+      <div
+        className="css-1qigpt8"
+        color="WHITE"
+      >
+        f
+        3
+      </div>
     </div>
-  </div>
-  <div
-    className="css-15k27lr"
-    color="BLACK"
-    onClick={[Function]}
-    x="g"
-    y="3"
-  >
     <div
-      className="css-1y32jx2"
+      className="css-1ojhaft"
       color="BLACK"
+      onClick={[Function]}
+      selected={false}
+      x="g"
+      y="3"
     >
-      g
-      3
+      <div
+        className="css-85kkh5"
+        color="BLACK"
+      >
+        g
+        3
+      </div>
     </div>
-  </div>
-  <div
-    className="css-1495z7x"
-    color="WHITE"
-    onClick={[Function]}
-    x="h"
-    y="3"
-  >
     <div
-      className="css-1nwny1d"
+      className="css-14mmxv0"
       color="WHITE"
+      onClick={[Function]}
+      selected={false}
+      x="h"
+      y="3"
     >
-      h
-      3
+      <div
+        className="css-1qigpt8"
+        color="WHITE"
+      >
+        h
+        3
+      </div>
     </div>
-  </div>
-  <div
-    className="css-1495z7x"
-    color="WHITE"
-    onClick={[Function]}
-    x="a"
-    y="2"
-  >
     <div
-      className="css-1nwny1d"
+      className="css-14mmxv0"
       color="WHITE"
+      onClick={[Function]}
+      selected={false}
+      x="a"
+      y="2"
     >
-      a
-      2
+      <div
+        className="css-1qigpt8"
+        color="WHITE"
+      >
+        a
+        2
+      </div>
     </div>
-  </div>
-  <div
-    className="css-15k27lr"
-    color="BLACK"
-    onClick={[Function]}
-    x="b"
-    y="2"
-  >
     <div
-      className="css-1y32jx2"
+      className="css-1ojhaft"
       color="BLACK"
+      onClick={[Function]}
+      selected={false}
+      x="b"
+      y="2"
     >
-      b
-      2
+      <div
+        className="css-85kkh5"
+        color="BLACK"
+      >
+        b
+        2
+      </div>
     </div>
-  </div>
-  <div
-    className="css-1495z7x"
-    color="WHITE"
-    onClick={[Function]}
-    x="c"
-    y="2"
-  >
     <div
-      className="css-1nwny1d"
+      className="css-14mmxv0"
       color="WHITE"
+      onClick={[Function]}
+      selected={false}
+      x="c"
+      y="2"
     >
-      c
-      2
+      <div
+        className="css-1qigpt8"
+        color="WHITE"
+      >
+        c
+        2
+      </div>
     </div>
-  </div>
-  <div
-    className="css-15k27lr"
-    color="BLACK"
-    onClick={[Function]}
-    x="d"
-    y="2"
-  >
     <div
-      className="css-1y32jx2"
+      className="css-1ojhaft"
       color="BLACK"
+      onClick={[Function]}
+      selected={false}
+      x="d"
+      y="2"
     >
-      d
-      2
+      <div
+        className="css-85kkh5"
+        color="BLACK"
+      >
+        d
+        2
+      </div>
     </div>
-  </div>
-  <div
-    className="css-1495z7x"
-    color="WHITE"
-    onClick={[Function]}
-    x="e"
-    y="2"
-  >
     <div
-      className="css-1nwny1d"
+      className="css-14mmxv0"
       color="WHITE"
+      onClick={[Function]}
+      selected={false}
+      x="e"
+      y="2"
     >
-      e
-      2
+      <div
+        className="css-1qigpt8"
+        color="WHITE"
+      >
+        e
+        2
+      </div>
     </div>
-  </div>
-  <div
-    className="css-15k27lr"
-    color="BLACK"
-    onClick={[Function]}
-    x="f"
-    y="2"
-  >
     <div
-      className="css-1y32jx2"
+      className="css-1ojhaft"
       color="BLACK"
+      onClick={[Function]}
+      selected={false}
+      x="f"
+      y="2"
     >
-      f
-      2
+      <div
+        className="css-85kkh5"
+        color="BLACK"
+      >
+        f
+        2
+      </div>
     </div>
-  </div>
-  <div
-    className="css-1495z7x"
-    color="WHITE"
-    onClick={[Function]}
-    x="g"
-    y="2"
-  >
     <div
-      className="css-1nwny1d"
+      className="css-14mmxv0"
       color="WHITE"
+      onClick={[Function]}
+      selected={false}
+      x="g"
+      y="2"
     >
-      g
-      2
+      <div
+        className="css-1qigpt8"
+        color="WHITE"
+      >
+        g
+        2
+      </div>
     </div>
-  </div>
-  <div
-    className="css-15k27lr"
-    color="BLACK"
-    onClick={[Function]}
-    x="h"
-    y="2"
-  >
     <div
-      className="css-1y32jx2"
+      className="css-1ojhaft"
       color="BLACK"
+      onClick={[Function]}
+      selected={false}
+      x="h"
+      y="2"
     >
-      h
-      2
+      <div
+        className="css-85kkh5"
+        color="BLACK"
+      >
+        h
+        2
+      </div>
     </div>
-  </div>
-  <div
-    className="css-15k27lr"
-    color="BLACK"
-    onClick={[Function]}
-    x="a"
-    y="1"
-  >
     <div
-      className="css-1y32jx2"
+      className="css-1ojhaft"
       color="BLACK"
+      onClick={[Function]}
+      selected={false}
+      x="a"
+      y="1"
     >
-      a
-      1
+      <div
+        className="css-85kkh5"
+        color="BLACK"
+      >
+        a
+        1
+      </div>
     </div>
-  </div>
-  <div
-    className="css-1495z7x"
-    color="WHITE"
-    onClick={[Function]}
-    x="b"
-    y="1"
-  >
     <div
-      className="css-1nwny1d"
+      className="css-14mmxv0"
       color="WHITE"
+      onClick={[Function]}
+      selected={false}
+      x="b"
+      y="1"
     >
-      b
-      1
+      <div
+        className="css-1qigpt8"
+        color="WHITE"
+      >
+        b
+        1
+      </div>
     </div>
-  </div>
-  <div
-    className="css-15k27lr"
-    color="BLACK"
-    onClick={[Function]}
-    x="c"
-    y="1"
-  >
     <div
-      className="css-1y32jx2"
+      className="css-1ojhaft"
       color="BLACK"
+      onClick={[Function]}
+      selected={false}
+      x="c"
+      y="1"
     >
-      c
-      1
+      <div
+        className="css-85kkh5"
+        color="BLACK"
+      >
+        c
+        1
+      </div>
     </div>
-  </div>
-  <div
-    className="css-1495z7x"
-    color="WHITE"
-    onClick={[Function]}
-    x="d"
-    y="1"
-  >
     <div
-      className="css-1nwny1d"
+      className="css-14mmxv0"
       color="WHITE"
+      onClick={[Function]}
+      selected={false}
+      x="d"
+      y="1"
     >
-      d
-      1
+      <div
+        className="css-1qigpt8"
+        color="WHITE"
+      >
+        d
+        1
+      </div>
     </div>
-  </div>
-  <div
-    className="css-15k27lr"
-    color="BLACK"
-    onClick={[Function]}
-    x="e"
-    y="1"
-  >
     <div
-      className="css-1y32jx2"
+      className="css-1ojhaft"
       color="BLACK"
+      onClick={[Function]}
+      selected={false}
+      x="e"
+      y="1"
     >
-      e
-      1
+      <div
+        className="css-85kkh5"
+        color="BLACK"
+      >
+        e
+        1
+      </div>
     </div>
-  </div>
-  <div
-    className="css-1495z7x"
-    color="WHITE"
-    onClick={[Function]}
-    x="f"
-    y="1"
-  >
     <div
-      className="css-1nwny1d"
+      className="css-14mmxv0"
       color="WHITE"
+      onClick={[Function]}
+      selected={false}
+      x="f"
+      y="1"
     >
-      f
-      1
+      <div
+        className="css-1qigpt8"
+        color="WHITE"
+      >
+        f
+        1
+      </div>
     </div>
-  </div>
-  <div
-    className="css-15k27lr"
-    color="BLACK"
-    onClick={[Function]}
-    x="g"
-    y="1"
-  >
     <div
-      className="css-1y32jx2"
+      className="css-1ojhaft"
       color="BLACK"
+      onClick={[Function]}
+      selected={false}
+      x="g"
+      y="1"
     >
-      g
-      1
+      <div
+        className="css-85kkh5"
+        color="BLACK"
+      >
+        g
+        1
+      </div>
     </div>
-  </div>
-  <div
-    className="css-1495z7x"
-    color="WHITE"
-    onClick={[Function]}
-    x="h"
-    y="1"
-  >
     <div
-      className="css-1nwny1d"
+      className="css-14mmxv0"
       color="WHITE"
+      onClick={[Function]}
+      selected={false}
+      x="h"
+      y="1"
     >
-      h
-      1
+      <div
+        className="css-1qigpt8"
+        color="WHITE"
+      >
+        h
+        1
+      </div>
     </div>
-  </div>
-</div>
+  </div>,
+]
 `;

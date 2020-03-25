@@ -1,15 +1,85 @@
 import SockJS from "sockjs-client";
 import Stomp from "stompjs";
 
-import { pipe, prop, append, forEach } from "ramda";
+import {
+  always,
+  ap,
+  append,
+  curry,
+  find,
+  forEach,
+  pathOr,
+  pick,
+  pipe,
+  prop,
+  propEq,
+  propOr,
+  reject
+} from "ramda";
+import { box } from "./fp";
 
-const HARDCODED_EMAIL = "user@domain.tld";
+const generateRandomUser = () =>
+  Math.random()
+    .toString(36)
+    .substr(2, 5);
+
+const HARDCODED_EMAIL = `${generateRandomUser()}@domain.tld`;
+
+export const parseBody = pipe(propOr({}, "body"), JSON.parse);
+
+export const handlePossibleMovesReceived = curry((update, message) =>
+  pipe(parseBody, pick(["possibleMoves"]), update)(message)
+);
+
+export const handlePieceMovedReceived = curry((update, message) =>
+  pipe(
+    parseBody,
+    box,
+    ap([
+      pathOr([], ["game", "pieces"]),
+      always([]),
+      always(null),
+      pathOr([], ["game", "activePlayer", "color"])
+    ]),
+    ([pieces, possibleMoves, selection, activePlayerColor]) =>
+      update({
+        pieces,
+        possibleMoves,
+        selection,
+        activePlayerColor
+      })
+  )(message)
+);
+
+const gameToPlayerColor = pipe(
+  box,
+  ap([propOr({}, "player1"), propOr({}, "player2")]),
+  find(propEq("id", HARDCODED_EMAIL)),
+  prop("color")
+);
+
+const handleGameReadyReceived = curry((update, message) =>
+  pipe(
+    parseBody,
+    box,
+    ap([
+      pathOr([], ["game", "pieces"]),
+      pipe(propOr({}, "game"), gameToPlayerColor),
+      pathOr([], ["game", "activePlayer", "color"])
+    ]),
+    ([pieces, playerColor, activePlayerColor]) =>
+      update({
+        pieces,
+        playerColor,
+        activePlayerColor
+      })
+  )(message)
+);
 
 const createChess = () => {
   const socket = new SockJS("http://localhost:8080/ws");
   const ws = Stomp.over(socket);
-
-  ws.debug = null;
+  ws.debug = null; // Remove debug messages for socket communication
 
   let observers = [];
   let gameId = null;
@@ -17,41 +87,28 @@ const createChess = () => {
   let state = {
     pieces: [],
     possibleMoves: [],
-    selection: null
+    selection: null,
+    playerColor: null,
+    activePlayerColor: "WHITE"
   };
 
   ws.connect({}, () => {
     ws.subscribe("/user/queue/lfg/ack", frame => {
       gameId = pipe(prop("body"), JSON.parse, prop("gameId"))(frame);
+
       ws.subscribe(
         `/queue/game/${gameId}/ready`,
-        pipe(prop("body"), body => {
-          const newPieces = JSON.parse(body).game.board.pieces;
-          updateState({ pieces: newPieces });
-        })
+        handleGameReadyReceived(updateState)
       );
 
       ws.subscribe(
         `/queue/game/${gameId}/piece-moved`,
-        pipe(prop("body"), body => {
-          const newPieces = JSON.parse(body).game.board.pieces;
-
-          // If move successful
-          updateState({
-            pieces: newPieces,
-            possibleMoves: [],
-            selection: null
-          });
-          // Else API should return MoveError and we should keep the possible moves
-        })
+        handlePieceMovedReceived(updateState)
       );
 
       ws.subscribe(
         `/queue/game/${gameId}/possible-moves`,
-        pipe(prop("body"), body => {
-          const possibleMoves = JSON.parse(body).possibleMoves;
-          updateState({ possibleMoves: possibleMoves });
-        })
+        handlePossibleMovesReceived(updateState)
       );
 
       ws.send(
@@ -86,6 +143,7 @@ const createChess = () => {
   };
 
   const updateState = newState => {
+    console.log("OBSERVERS", observers.length);
     state = { ...state, ...newState };
     forEach(fn => fn(state))(observers);
   };
@@ -93,7 +151,12 @@ const createChess = () => {
   // Store array of handlers, otherwise only the last one can get notified from state changed
   const onStateChanged = fn => {
     observers = append(fn, observers);
-    fn(state);
+    fn(state); // Call the observer to give it initial state
+
+    // unsubscribe cb
+    return () => {
+      observers = reject(x => x === fn)(observers);
+    };
   };
 
   return {
