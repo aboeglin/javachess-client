@@ -36,4 +36,4 @@ jobs:
           username: ${{ secrets.DOCKER_USER }}
           password: ${{ secrets.DOCKER_PASSWORD }}
           tags: "release-${{ github.run_number }},latest"
-          buildargs: SOCKET_ENDPOINT="http://www.easychess.xyz/api/ws"
+          buildargs: SOCKET_ENDPOINT=http://www.easychess.xyz/api/ws
