@@ -57,11 +57,13 @@ jobs:
         uses: appleboy/ssh-action@master
         with:
           host: easychess.xyz
+          username: root
           key: ${{ secrets.PRIVATE_KEY }}
           script: docker pull arnaudboeglin/javachess-client:latest
       - name: Update service
         uses: appleboy/ssh-action@master
         with:
           host: easychess.xyz
+          username: root
           key: ${{ secrets.PRIVATE_KEY }}
           script: cd /opt && docker-compose up -d
