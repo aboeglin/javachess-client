@@ -38,3 +38,30 @@ jobs:
           password: ${{ secrets.DOCKER_PASSWORD }}
           tags: "release-${{ github.run_number }},latest"
           buildargs: SOCKET_ENDPOINT=http://www.easychess.xyz/api/ws
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-18.04
+    steps:
+      - uses: actions/checkout@v2
+
+      # - name: Setup SSH Keys and known_hosts
+      #   env:
+      #     SSH_AUTH_SOCK: /tmp/ssh_agent.sock
+      #   run: |
+      #     mkdir -p ~/.ssh
+      #     ssh-keyscan github.com >> ~/.ssh/known_hosts
+      #     ssh-agent -a $SSH_AUTH_SOCK > /dev/null
+      #     ssh-add - <<< "${{ secrets.PRIVATE_KEY }}"
+      - name: Pull image
+        uses: appleboy/ssh-action@master
+        with:
+          host: easychess.xyz
+          key: ${{ secrets.PRIVATE_KEY }}
+          script: docker pull arnaudboeglin/javachess-client:latest
+      - name: Update service
+        uses: appleboy/ssh-action@master
+        with:
+          host: easychess.xyz
+          key: ${{ secrets.PRIVATE_KEY }}
+          script: cd /opt && docker-compose up -d
