@@ -34,7 +34,9 @@ export const GameCenter = ({ userName, userNameSet }) => {
       <Separator />
       <ListGames games={games} />
       <Separator />
-      <h1>Hello {userName} !</h1>
+			{/* Move below to component */}
+      <h2>INFO</h2>
+			<div>username: <strong>{userName}</strong></div>
       <button onClick={handleLogOutClicked(userNameSet)}>Log out</button>
     </div>
   );

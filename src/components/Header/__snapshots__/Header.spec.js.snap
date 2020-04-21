@@ -2,7 +2,7 @@
 
 exports[`renders <Header /> 1`] = `
 <header
-  className="css-kvuewi"
+  className="css-433pu0"
 >
   <h2>
     Chess Game

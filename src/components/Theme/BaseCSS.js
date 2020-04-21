@@ -15,8 +15,7 @@ const styles = css`
   }
 
   body {
-    background-color: #EFF1F3;
-    color: #292828;
+    color: #555;
   }
 
   h1, h2, h3, h4, h5, h6 {

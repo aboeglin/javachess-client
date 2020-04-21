@@ -1,15 +1,16 @@
 import React from "react";
-import PropTypes from "prop-types"
+import PropTypes from "prop-types";
+
+import { Link } from "react-router-dom";
 
 import { pathOr } from "ramda";
 
 import { Table, TableHead, TD } from "./styled";
 
 export const ListGames = ({ games }) => {
-
   return (
     <div>
-      <h2>Games</h2>
+      <h2>GAMES</h2>
       <Table>
         <TableHead>
           <tr>
@@ -25,9 +26,9 @@ export const ListGames = ({ games }) => {
             <tr key={g.id}>
               <TD>{g.id}</TD>
               <TD>{pathOr("", ["player1", "id"])(g)}</TD>
-              <TD>{pathOr("", ["player2", "id"])(g)}</TD>
+              <TD>{pathOr("-", ["player2", "id"])(g)}</TD>
               <TD>{g.player1 && g.player2 ? "FULL" : "AVAILABLE"}</TD>
-              <TD>{!g.player1 || (!g.player2 && <button>JOIN</button>)}</TD>
+              <TD>{!g.player1 || (!g.player2 && <Link to={`/game/${g.id}`}>JOIN</Link>)}</TD>
             </tr>
           ))}
         </tbody>
@@ -37,7 +38,7 @@ export const ListGames = ({ games }) => {
 };
 
 ListGames.propTypes = {
-	games: PropTypes.array,
+  games: PropTypes.array,
 };
 
 export default ListGames;
