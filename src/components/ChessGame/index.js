@@ -1,1 +1,3 @@
-export * from "./ChessGame";
+import ChessGame from "./ChessGame";
+
+export default ChessGame;

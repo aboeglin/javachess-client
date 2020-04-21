@@ -14,16 +14,9 @@ import {
   prop,
   propEq,
   propOr,
-  reject
+  reject,
 } from "ramda";
 import { box } from "./fp";
-
-const generateRandomUser = () =>
-  Math.random()
-    .toString(36)
-    .substr(2, 5);
-
-const HARDCODED_EMAIL = `${generateRandomUser()}@domain.tld`;
 
 export const parseBody = pipe(propOr({}, "body"), JSON.parse);
 
@@ -39,67 +32,81 @@ export const handlePieceMovedReceived = curry((update, message) =>
       pathOr([], ["game", "pieces"]),
       always([]),
       always(null),
-      pathOr([], ["game", "activePlayer", "color"])
+      pathOr([], ["game", "activePlayer", "color"]),
     ]),
     ([pieces, possibleMoves, selection, activePlayerColor]) =>
       update({
         pieces,
         possibleMoves,
         selection,
-        activePlayerColor
+        activePlayerColor,
       })
   )(message)
 );
 
-const gameToPlayerColor = pipe(
-  box,
-  ap([propOr({}, "player1"), propOr({}, "player2")]),
-  find(propEq("id", HARDCODED_EMAIL)),
-  prop("color")
-);
-
-const handleGameReadyReceived = curry((update, message) =>
+const gameToPlayerColor = curry((userName, game) =>
   pipe(
-    parseBody,
     box,
-    ap([
-      pathOr([], ["game", "pieces"]),
-      pipe(propOr({}, "game"), gameToPlayerColor),
-      pathOr([], ["game", "activePlayer", "color"])
-    ]),
-    ([pieces, playerColor, activePlayerColor]) =>
-      update({
-        pieces,
-        playerColor,
-        activePlayerColor
-      })
-  )(message)
+    ap([propOr({}, "player1"), propOr({}, "player2")]),
+    find(propEq("id", userName)),
+    prop("color")
+  )(game)
+);
+
+const handleGameReadyReceived = curry(
+  (update, userName, message) =>
+    console.log("READY", message) ||
+    pipe(
+      parseBody,
+      box,
+      ap([
+        pathOr([], ["game", "pieces"]),
+        pipe(propOr({}, "game"), gameToPlayerColor(userName)),
+        pathOr([], ["game", "activePlayer", "color"]),
+      ]),
+      ([pieces, playerColor, activePlayerColor]) =>
+        update({
+          pieces,
+          playerColor,
+          activePlayerColor,
+        })
+    )(message)
 );
 
 const createChess = () => {
-  const endpoint = process.env.GATSBY_SOCKET_ENDPOINT || "http://localhost:8080/ws";
-  const socket = new SockJS(endpoint);
-  const ws = Stomp.over(socket);
-  ws.debug = null; // Remove debug messages for socket communication
+  const endpoint =
+    process.env.GATSBY_SOCKET_ENDPOINT || "http://localhost:8080/ws";
+  
+  // ws.debug = null; // Remove debug messages for socket communication
 
   let observers = [];
-  let gameId = null;
+	let gameId = null;
+	let socket = null;
+	let ws = null;
 
   let state = {
     pieces: [],
     possibleMoves: [],
     selection: null,
     playerColor: null,
-    activePlayerColor: "WHITE"
+    activePlayerColor: "WHITE",
+    userName: localStorage.getItem("userName"),
   };
 
-  ws.connect({}, () => {
-    ws.subscribe("/user/queue/lfg/ack", frame => {
-      gameId = pipe(prop("body"), JSON.parse, prop("gameId"))(frame);
+  const startGame = (id) => {
+    console.log("STARTING GAME");
+		gameId = id;
+
+		socket = new SockJS(endpoint);
+		ws = Stomp.over(socket);
+		
+    ws.connect({}, () => {
+			// setTimeout(() => console.log("OUT"), 1000);
+      console.log("CONNECTED");
 
       ws.subscribe(
         `/queue/game/${gameId}/ready`,
-        handleGameReadyReceived(updateState)
+        handleGameReadyReceived(updateState, state.userName)
       );
 
       ws.subscribe(
@@ -115,23 +122,21 @@ const createChess = () => {
       ws.send(
         `/app/game/${gameId}/join`,
         {},
-        JSON.stringify({ email: HARDCODED_EMAIL })
+        JSON.stringify({ email: state.userName })
       );
+
+      ws.subscribe("/user/queue/errors", (frame) => {
+        console.error(frame.body);
+      });
     });
+  };
 
-    ws.subscribe("/user/queue/errors", frame => {
-      console.error(frame.body);
-    });
-
-    ws.send("/app/lfg", {}, JSON.stringify({ email: HARDCODED_EMAIL }));
-  });
-
-  const pieceSelected = piece => {
+  const pieceSelected = (piece) => {
     updateState({ selection: piece });
     ws.send(
       `/app/game/${gameId}/select-piece`,
       {},
-      JSON.stringify({ email: HARDCODED_EMAIL, x: piece.x, y: piece.y })
+      JSON.stringify({ email: state.userName, x: piece.x, y: piece.y })
     );
   };
 
@@ -139,31 +144,44 @@ const createChess = () => {
     ws.send(
       `/app/game/${gameId}/perform-move`,
       {},
-      JSON.stringify({ email: HARDCODED_EMAIL, fromX, fromY, toX, toY })
+      JSON.stringify({ email: state.userName, fromX, fromY, toX, toY })
     );
   };
 
-  const updateState = newState => {
-    console.log("OBSERVERS", observers.length);
+  const updateState = (newState) => {
+    console.log(newState, observers.length);
     state = { ...state, ...newState };
-    forEach(fn => fn(state))(observers);
+    forEach((fn) => fn(state))(observers);
+  };
+
+  const userNameSet = (userName) => {
+    if (!userName) {
+      localStorage.removeItem("userName");
+    } else {
+      localStorage.setItem("userName", userName);
+    }
+    updateState({ userName });
   };
 
   // Store array of handlers, otherwise only the last one can get notified from state changed
-  const onStateChanged = fn => {
+  const onStateChanged = (fn) => {
+    console.log(observers.length);
     observers = append(fn, observers);
-    fn(state); // Call the observer to give it initial state
-
     // unsubscribe cb
     return () => {
-      observers = reject(x => x === fn)(observers);
+      observers = reject((x) => x === fn)(observers);
     };
   };
+
+  const getState = () => state;
 
   return {
     onStateChanged,
     pieceSelected,
-    pieceMoved
+    pieceMoved,
+    userNameSet,
+    getState,
+    startGame,
   };
 };
 

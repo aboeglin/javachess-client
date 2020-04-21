@@ -5,7 +5,7 @@ module.exports = {
     description: "A chess game app",
     keywords: ["gatsby", "gatsbyjs", "gatsby starter", "github"],
     type: "website",
-    image: ""
+    image: "",
   },
   plugins: [
     "gatsby-plugin-react-helmet",
@@ -14,8 +14,8 @@ module.exports = {
       resolve: "gatsby-source-filesystem",
       options: {
         name: "pages",
-        path: `${__dirname}/src/pages/`
-      }
+        path: `${__dirname}/src/pages/`,
+      },
     },
     "gatsby-plugin-sharp",
     "gatsby-transformer-sharp",
@@ -23,8 +23,8 @@ module.exports = {
       resolve: "gatsby-source-filesystem",
       options: {
         name: "images",
-        path: `${__dirname}/src/assets`
-      }
+        path: `${__dirname}/src/assets`,
+      },
     },
     {
       resolve: "gatsby-plugin-manifest",
@@ -34,16 +34,16 @@ module.exports = {
         start_url: "/",
         background_color: "#663399",
         theme_color: "#663399",
-        display: "minimal-ui"
-      }
+        display: "minimal-ui",
+      },
     },
     {
       resolve: `gatsby-plugin-react-svg`,
       options: {
         rule: {
-          include: /assets/
-        }
-      }
+          include: /assets/,
+        },
+      },
     },
     {
       resolve: `gatsby-plugin-alias-imports`,
@@ -58,10 +58,14 @@ module.exports = {
           "@pages": "src/pages",
           "@templates": "src/templates",
           "@services": "src/services",
-          "@utils": "src/utils"
+          "@utils": "src/utils",
         },
-        extensions: ["js", "mdx"]
-      }
-    }
-  ]
+        extensions: ["js", "mdx"],
+      },
+    },
+    {
+      resolve: `gatsby-plugin-create-client-paths`,
+      options: { prefixes: [`/*`] },
+    },
+  ],
 };

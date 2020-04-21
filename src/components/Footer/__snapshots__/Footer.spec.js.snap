@@ -2,37 +2,19 @@
 
 exports[`renders <Footer /> 1`] = `
 <footer
-  className="css-oga8ex"
+  className="css-1tikgdc"
 >
-  <div
-    className="css-a7gep9"
-  >
-    <div
-      className="css-o24kmu"
+  <div>
+    Contribute on
+     
+    <a
+      href="https://github.com/aboeglin/javachess-client"
     >
-      <div
-        className="css-qn0jnn"
-      >
-        <div>
-          Contribute on
-           
-          <a
-            href="https://github.com/aboeglin/javachess-client"
-          >
-            Github
-          </a>
-        </div>
-      </div>
-      <div
-        className="css-t5att6"
-      >
-        <div>
-          Copyright ©
-           
-          2020
-        </div>
-      </div>
-    </div>
+      Github
+    </a>
+  </div>
+  <div>
+    Copyright © 2020
   </div>
 </footer>
 `;

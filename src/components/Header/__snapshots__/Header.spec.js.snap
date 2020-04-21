@@ -2,22 +2,10 @@
 
 exports[`renders <Header /> 1`] = `
 <header
-  className="css-1migcxd"
+  className="css-kvuewi"
 >
-  <div
-    className="css-a7gep9"
-  >
-    <div
-      className="css-o24kmu"
-    >
-      <div
-        className="css-qn0jnn"
-      >
-        <h2>
-          Chess Game
-        </h2>
-      </div>
-    </div>
-  </div>
+  <h2>
+    Chess Game
+  </h2>
 </header>
 `;
