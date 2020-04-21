@@ -76,13 +76,13 @@ const handleGameReadyReceived = curry(
 const createChess = () => {
   const endpoint =
     process.env.GATSBY_SOCKET_ENDPOINT || "http://localhost:8080/ws";
-  
+
   // ws.debug = null; // Remove debug messages for socket communication
 
   let observers = [];
-	let gameId = null;
-	let socket = null;
-	let ws = null;
+  let gameId = null;
+  let socket = null;
+  let ws = null;
 
   let state = {
     pieces: [],
@@ -90,18 +90,19 @@ const createChess = () => {
     selection: null,
     playerColor: null,
     activePlayerColor: "WHITE",
-    userName: localStorage.getItem("userName"),
+    userName:
+      typeof window !== "undefined" ? localStorage.getItem("userName") : null,
   };
 
   const startGame = (id) => {
     console.log("STARTING GAME");
-		gameId = id;
+    gameId = id;
 
-		socket = new SockJS(endpoint);
-		ws = Stomp.over(socket);
-		
+    socket = new SockJS(endpoint);
+    ws = Stomp.over(socket);
+
     ws.connect({}, () => {
-			// setTimeout(() => console.log("OUT"), 1000);
+      // setTimeout(() => console.log("OUT"), 1000);
       console.log("CONNECTED");
 
       ws.subscribe(
@@ -155,10 +156,12 @@ const createChess = () => {
   };
 
   const userNameSet = (userName) => {
-    if (!userName) {
-      localStorage.removeItem("userName");
-    } else {
-      localStorage.setItem("userName", userName);
+    if (typeof window !== "undefined") {
+      if (!userName) {
+        localStorage.removeItem("userName");
+      } else {
+        localStorage.setItem("userName", userName);
+      }
     }
     updateState({ userName });
   };
