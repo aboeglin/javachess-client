@@ -2,7 +2,7 @@ import React from "react";
 
 import { curry, pipe } from "ramda";
 
-import { PieceContainer } from "./styled";
+import { Container } from "./styled";
 
 import BLACK_PAWN_IMAGE_URL from "./images/pawn-black.png";
 import BLACK_BISHOP_IMAGE_URL from "./images/bishop-black.png";
@@ -51,7 +51,7 @@ export const Piece = ({
   pipe(
     ({ type, color }) => getImageUrl(type, color),
     url => (
-      <PieceContainer
+      <Container
         type={piece.type}
         x={piece.x}
         onClick={handlePieceClicked(
@@ -62,7 +62,7 @@ export const Piece = ({
         )}
       >
         <img src={url} />
-      </PieceContainer>
+      </Container>
     )
   )(piece);
 

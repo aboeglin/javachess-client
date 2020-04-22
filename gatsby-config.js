@@ -8,6 +8,25 @@ module.exports = {
     image: "",
   },
   plugins: [
+		{
+      resolve: `gatsby-plugin-alias-imports`,
+      options: {
+        alias: {
+          "@root": ".",
+          "@src": "src",
+          "@styles": "src/styles",
+          "@assets": "src/assets",
+          "@components": "src/components",
+          "@hocs": "src/hocs",
+          "@hooks": "src/hooks",
+          "@pages": "src/pages",
+          "@templates": "src/templates",
+          "@services": "src/services",
+          "@utils": "src/utils",
+        },
+        extensions: ["js", "mdx"],
+      },
+    },
     "gatsby-plugin-react-helmet",
     "gatsby-plugin-emotion",
     {
@@ -43,25 +62,6 @@ module.exports = {
         rule: {
           include: /assets/,
         },
-      },
-    },
-    {
-      resolve: `gatsby-plugin-alias-imports`,
-      options: {
-        alias: {
-          "@root": ".",
-          "@src": "src",
-          "@styles": "src/styles",
-          "@assets": "src/assets",
-          "@components": "src/components",
-          "@hocs": "src/hocs",
-          "@hooks": "src/hooks",
-          "@pages": "src/pages",
-          "@templates": "src/templates",
-          "@services": "src/services",
-          "@utils": "src/utils",
-        },
-        extensions: ["js", "mdx"],
       },
     },
     {

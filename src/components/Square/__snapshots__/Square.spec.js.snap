@@ -1,0 +1,49 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders <Square /> 1`] = `
+<div
+  className="sc-bwzfXH hElfQg"
+  color="WHITE"
+  onClick={[Function]}
+  selected={false}
+  x="b"
+  y="3"
+>
+  <div
+    className="sc-htpNat gFiUBF"
+    color="WHITE"
+  >
+    b
+    3
+  </div>
+</div>
+`;
+
+exports[`renders <Square /> 2`] = `
+<div
+  className="sc-bwzfXH hElfQg"
+  color="WHITE"
+  onClick={[Function]}
+  selected={false}
+  x="a"
+  y="3"
+>
+  <div
+    className="sc-htpNat gFiUBF"
+    color="WHITE"
+  >
+    a
+    3
+  </div>
+  <div
+    className="sc-bdVaJa eIPZSX"
+    onClick={[Function]}
+    type="PAWN"
+    x="a"
+  >
+    <img
+      src={Object {}}
+    />
+  </div>
+</div>
+`;

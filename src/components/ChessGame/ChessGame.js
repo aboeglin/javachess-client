@@ -5,7 +5,7 @@ import { fork } from "fluture";
 
 import { Container } from "./styled";
 
-import Board from "./Board";
+import Board from "@components/Board";
 import Info from "./Info";
 
 import { fetchGames, joinGame } from "@utils/upstreams";

@@ -3,7 +3,7 @@ const { fromPairs, map, pathOr, pipe, toPairs } = require("ramda");
 const gatsbyConfig = require("./gatsby-config");
 
 const gatsbyConfigAliases = pipe(
-  pathOr([], ["plugins", 1, "options", "alias"]),
+	pathOr([], ["plugins", 0, "options", "alias"]),
   toPairs,
   map(([k, v]) => ["^" + k + "/" + "(.*)$", "<rootDir>/" + v + "/$1"]),
   fromPairs

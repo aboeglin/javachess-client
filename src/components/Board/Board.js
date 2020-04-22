@@ -12,9 +12,10 @@ import {
   ifElse
 } from "ramda";
 
-import SquareContainer from "./SquareContainer";
-import BOARD from "./board.json";
+import SquareContainer from "@components/Square";
 import withChess from "@hocs/withChess";
+
+import BOARD from "./board.json";
 
 const orderSquaresForDisplay = pipe(
   reverse,

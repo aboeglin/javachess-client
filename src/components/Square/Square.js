@@ -2,9 +2,10 @@ import React from "react";
 import { PropTypes } from "prop-types";
 import { curry, find, pipe, propOr } from "ramda";
 
-import Piece from "./Piece";
-import { Square, SquareLabel } from "./styled";
+import Piece from "@components/Piece";
 import withChess from "@hocs/withChess";
+
+import { Container, Label } from "./styled";
 
 const getPieceAtSquare = curry((pieces, square) =>
   find(({ x, y }) => x === square.x && y === square.y)(pieces)
@@ -23,15 +24,15 @@ export const handleClick = curry(
   }
 );
 
-export const SquareContainer = ({
+export const Square = ({
   square,
   pieces,
   pieceMoved,
   selection,
-  activePlayerColor
+  activePlayerColor,
 }) =>
-  pipe(getPieceAtSquare(pieces), piece => (
-    <Square
+  pipe(getPieceAtSquare(pieces), (piece) => (
+    <Container
       color={square.color}
       x={square.x}
       y={square.y}
@@ -41,17 +42,21 @@ export const SquareContainer = ({
       selectionColor={activePlayerColor}
       onClick={handleClick(pieceMoved, selection, piece, square)}
     >
-      <SquareLabel color={square.color}>
+      <Label color={square.color}>
         {square.x}
         {square.y}
-      </SquareLabel>
+      </Label>
       {piece && <Piece piece={piece} />}
-    </Square>
+    </Container>
   ))(square);
 
-SquareContainer.propTypes = {
+Square.propTypes = {
   square: PropTypes.object,
-  pieces: PropTypes.array
+  pieces: PropTypes.array,
 };
 
-export default withChess(SquareContainer);
+Square.defaultProps = {
+  pieces: [],
+};
+
+export default withChess(Square);
