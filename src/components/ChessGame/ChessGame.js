@@ -1,32 +1,15 @@
 import React, { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
-import axios from "axios";
-import { find, pathOr, prop, propEq } from "ramda";
+import { find, pathOr, propEq } from "ramda";
+import { fork } from "fluture";
 
 import { Container } from "./styled";
 
 import Board from "./Board";
 import Info from "./Info";
 
+import { fetchGames, joinGame } from "@utils/upstreams";
 import withChess from "@hocs/withChess";
-
-const fetchGames = (callback) => {
-  const endpoint =
-    process.env.GATSBY_CHESS_SERVICE_ENDPOINT || "http://localhost:8080";
-  axios
-    .get(`${endpoint}/games`)
-    .then(prop("data"))
-    .then(callback);
-};
-
-const joinGame = (gameId, userName, callback) => {
-  const endpoint =
-    process.env.GATSBY_CHESS_SERVICE_ENDPOINT || "http://localhost:8080";
-  axios
-    .patch(`${endpoint}/games/${gameId}`, { userId: userName })
-    .then(prop("data"))
-    .then(callback);
-};
 
 export const ChessGame = ({ startGame, userName }) => {
   const id = parseInt(useParams().id, 10);
@@ -34,7 +17,7 @@ export const ChessGame = ({ startGame, userName }) => {
   const [joined, setJoined] = useState(false);
 
   useEffect(() => {
-    fetchGames(setGames);
+    fork(console.error)(setGames)(fetchGames());
   }, []);
 
   const currentGame = find(propEq("id", id))(games);
@@ -46,15 +29,13 @@ export const ChessGame = ({ startGame, userName }) => {
     const shouldJoin =
       userName !== player1Id && userName !== player2Id && currentGame;
     if (shouldJoin) {
-      joinGame(id, userName, () => setJoined(true));
+      fork(console.error)(() => setJoined(true))(joinGame(userName, id));
     } else {
       setJoined(true);
     }
   }, [games]);
 
   useEffect(() => {
-		console.log("joined", joined);
-		console.log("gameId", id);
     if (joined) {
 			startGame(id);
     }
