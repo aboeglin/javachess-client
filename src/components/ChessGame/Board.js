@@ -14,7 +14,7 @@ import {
 
 import SquareContainer from "./SquareContainer";
 import BOARD from "./board.json";
-import withChess from "../../hoc/withChess";
+import withChess from "@hocs/withChess";
 
 const orderSquaresForDisplay = pipe(
   reverse,

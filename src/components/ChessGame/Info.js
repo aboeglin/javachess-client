@@ -1,7 +1,7 @@
 import React from "react";
 import { PropTypes } from "prop-types";
 
-import withChess from "../../hoc/withChess";
+import withChess from "@hocs/withChess";
 
 export const Info = ({ activePlayerColor, playerColor }) => (
   <div>

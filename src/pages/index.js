@@ -1,15 +1,14 @@
 import React from "react";
 
-import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import { always, ifElse, isNil, pipe, prop } from "ramda";
 
 import { Site } from "@components/Site";
-import ChessGame from "@components/ChessGame";
 import SignIn from "@components/SignIn";
-import GameCenter from "@components/GameCenter";
+import RouterConfig from "@components/RouterConfig";
 
-import ChessContext from "../hooks/chess-context";
-import createChess from "../utils/createChess";
-import withChess from "../hoc/withChess";
+import ChessContext from "@hooks/chess-context";
+import createChess from "@utils/createChess";
+import withChess from "@hocs/withChess";
 
 const chessStore = createChess();
 
@@ -23,23 +22,12 @@ const IndexPage = ({ ...other }) => {
   );
 };
 
-const Main = (props) => {
-  const body = props.userName ? (
-    <Router>
-      <Switch>
-        <Route path="/game/:id">
-          <ChessGame />
-        </Route>
-        <Route path="/">
-          <GameCenter />
-        </Route>
-      </Switch>
-    </Router>
-  ) : (
-    <SignIn />
-  );
-  return body;
-};
+const Main = (props) =>
+  pipe(
+    prop("userName"),
+    ifElse(isNil, always(<SignIn />), always(<RouterConfig />))
+  )(props);
+
 
 const Body = withChess(Main);
 

@@ -4,7 +4,7 @@ import PropTypes from "prop-types"
 
 import { curry, path, pipe } from "ramda";
 
-import withChess from "../../hoc/withChess";
+import withChess from "@hocs/withChess";
 
 const handleUserNameChanged = curry((setValue, event) =>
   pipe(path(["target", "value"]), setValue)(event)

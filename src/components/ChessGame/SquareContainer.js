@@ -4,7 +4,7 @@ import { curry, find, pipe, propOr } from "ramda";
 
 import Piece from "./Piece";
 import { Square, SquareLabel } from "./styled";
-import withChess from "../../hoc/withChess";
+import withChess from "@hocs/withChess";
 
 const getPieceAtSquare = curry((pieces, square) =>
   find(({ x, y }) => x === square.x && y === square.y)(pieces)

@@ -1,6 +1,6 @@
 import React from "react";
 import { curry } from "ramda";
-import { injectChildren } from "../utils/react";
+import { injectChildren } from "@utils/react";
 
 export const breakpointAware = curry(
   (El, { children, breakpointsActive, toggleBreakpoints }) => (

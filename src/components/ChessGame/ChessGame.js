@@ -8,7 +8,7 @@ import { Container } from "./styled";
 import Board from "./Board";
 import Info from "./Info";
 
-import withChess from "../../hoc/withChess";
+import withChess from "@hocs/withChess";
 
 const fetchGames = (callback) => {
   const endpoint =
@@ -27,8 +27,6 @@ const joinGame = (gameId, userName, callback) => {
     .then(prop("data"))
     .then(callback);
 };
-
-// const set = (callback, value) => () => callback(value);
 
 export const ChessGame = ({ startGame, userName }) => {
   const id = parseInt(useParams().id, 10);

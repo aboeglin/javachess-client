@@ -1,10 +1,10 @@
 import React from "react";
 import PropTypes from "prop-types";
 
-import { Theme } from "../Theme";
-import { Footer } from "../Footer";
-import { Header } from "../Header";
-import { breakpointAware } from "../../hoc/breakpointAware";
+import { Theme } from "@components/Theme";
+import { Footer } from "@components/Footer";
+import { Header } from "@components/Header";
+import { breakpointAware } from "@hocs/breakpointAware";
 
 import { SEO } from "./SEO";
 import { Main } from "./styled";

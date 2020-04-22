@@ -16,7 +16,7 @@ import WHITE_KNIGHT_IMAGE_URL from "./images/knight-white.png";
 import WHITE_ROOK_IMAGE_URL from "./images/rook-white.png";
 import WHITE_QUEEN_IMAGE_URL from "./images/queen-white.png";
 import WHITE_KING_IMAGE_URL from "./images/king-white.png";
-import withChess from "../../hoc/withChess";
+import withChess from "@hocs/withChess";
 
 const getImageUrl = (type, color) =>
   ({

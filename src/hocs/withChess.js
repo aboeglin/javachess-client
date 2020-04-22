@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useContext } from "react";
 
-import ChessContext from "../hooks/chess-context";
+import ChessContext from "@hooks/chess-context";
 
 const withChess = (Component) => {
   const Chess = (props) => {
