@@ -34,6 +34,7 @@
     "axios": "^0.19.2",
     "bodypaint": "^0.0.2",
     "emotion-theming": "^10.0.19",
+    "fluture": "^12.2.0",
     "gatsby": "^2.17.11",
     "gatsby-image": "^2.2.31",
     "gatsby-plugin-create-client-paths": "^2.2.3",
