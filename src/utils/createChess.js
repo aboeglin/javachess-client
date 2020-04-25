@@ -119,7 +119,7 @@ const createChess = () => {
       ws.send(
         `/app/game/${gameId}/join`,
         {},
-        JSON.stringify({ email: state.userName })
+        JSON.stringify({ playerId: state.userName })
       );
 
       ws.subscribe("/user/queue/errors", (frame) => {
@@ -133,7 +133,7 @@ const createChess = () => {
     ws.send(
       `/app/game/${gameId}/select-piece`,
       {},
-      JSON.stringify({ email: state.userName, x: piece.x, y: piece.y })
+      JSON.stringify({ playerId: state.userName, x: piece.x, y: piece.y })
     );
   };
 

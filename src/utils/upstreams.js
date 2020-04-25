@@ -19,7 +19,7 @@ export const createGameWithPostAndEndpoint = curry(
   (post, endpoint, path, userName) =>
     pipe(
       concat(endpoint),
-      post(__, { userId: userName }),
+      post(__, { playerId: userName }),
       map(prop("data"))
     )(path)
 );
@@ -37,7 +37,7 @@ export const joinGameWithPatchAndEndpoint = curry(
       concat("/"),
       concat(path),
       concat(endpoint),
-      patch(__, { userId: userName }),
+      patch(__, { playerId: userName }),
       map(prop("data"))
     )(gameId)
 );
