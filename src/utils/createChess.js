@@ -95,16 +95,12 @@ const createChess = () => {
   };
 
   const startGame = (id) => {
-    console.log("STARTING GAME");
     gameId = id;
 
     socket = new SockJS(endpoint);
     ws = Stomp.over(socket);
 
     ws.connect({}, () => {
-      // setTimeout(() => console.log("OUT"), 1000);
-      console.log("CONNECTED");
-
       ws.subscribe(
         `/queue/game/${gameId}/ready`,
         handleGameReadyReceived(updateState, state.userName)
@@ -145,12 +141,11 @@ const createChess = () => {
     ws.send(
       `/app/game/${gameId}/perform-move`,
       {},
-      JSON.stringify({ email: state.userName, fromX, fromY, toX, toY })
+      JSON.stringify({ playerId: state.userName, fromX, fromY, toX, toY })
     );
   };
 
   const updateState = (newState) => {
-    console.log(newState, observers.length);
     state = { ...state, ...newState };
     forEach((fn) => fn(state))(observers);
   };
@@ -168,7 +163,6 @@ const createChess = () => {
 
   // Store array of handlers, otherwise only the last one can get notified from state changed
   const onStateChanged = (fn) => {
-    console.log(observers.length);
     observers = append(fn, observers);
     // unsubscribe cb
     return () => {
