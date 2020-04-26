@@ -24,7 +24,10 @@ const withChess = (Component) => {
         pieceSelected={chess.pieceSelected}
         pieceMoved={chess.pieceMoved}
         userNameSet={chess.userNameSet}
-        startGame={chess.startGame}
+				startGame={chess.startGame}
+				running={state.running}
+				error={state.error}
+				errorCode={state.errorCode}
       />
     );
   };

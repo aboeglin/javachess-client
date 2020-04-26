@@ -18,6 +18,16 @@ import {
 } from "ramda";
 import { box } from "./fp";
 
+// Move in other file
+const ErrorCode = {
+  MOVE_NOT_ALLOWED: "MOVE_NOT_ALLOWED",
+  NOT_YOUR_TURN: "NOT_YOUR_TURN",
+  PLAYER_NOT_IN_GAME: "PLAYER_NOT_IN_GAME",
+  GAME_ALREADY_FULL: "GAME_ALREADY_FULL",
+  GAME_NOT_FOUND: "GAME_NOT_FOUND",
+  NO_ERROR: "NO_ERROR",
+};
+
 export const parseBody = pipe(propOr({}, "body"), JSON.parse);
 
 export const handlePossibleMovesReceived = curry((update, message) =>
@@ -69,8 +79,18 @@ const handleGameReadyReceived = curry(
           pieces,
           playerColor,
           activePlayerColor,
+          running: true,
         })
     )(message)
+);
+
+const handleError = curry((update, message) =>
+  pipe(
+    parseBody,
+    box,
+    ap([propOr(false, "error"), propOr(false, "errorCode")]),
+    ([error, errorCode]) => update({ error, errorCode })
+  )(message)
 );
 
 const createChess = () => {
@@ -83,13 +103,17 @@ const createChess = () => {
   let gameId = null;
   let socket = null;
   let ws = null;
+  let socketActive = false;
 
   let state = {
+    running: false,
     pieces: [],
     possibleMoves: [],
     selection: null,
     playerColor: null,
     activePlayerColor: "WHITE",
+    error: false,
+    errorCode: ErrorCode.NO_ERROR,
     userName:
       typeof window !== "undefined" ? localStorage.getItem("userName") : null,
   };
@@ -97,35 +121,60 @@ const createChess = () => {
   const startGame = (id) => {
     gameId = id;
 
-    socket = new SockJS(endpoint);
-    ws = Stomp.over(socket);
+    let connected = false;
+    let intervalId = null;
 
-    ws.connect({}, () => {
-      ws.subscribe(
-        `/queue/game/${gameId}/ready`,
-        handleGameReadyReceived(updateState, state.userName)
-      );
-
-      ws.subscribe(
-        `/queue/game/${gameId}/piece-moved`,
-        handlePieceMovedReceived(updateState)
-      );
-
-      ws.subscribe(
-        `/queue/game/${gameId}/possible-moves`,
-        handlePossibleMovesReceived(updateState)
-      );
-
-      ws.send(
-        `/app/game/${gameId}/join`,
+    const startConnection = () => {
+      socket = new SockJS(endpoint);
+      ws = Stomp.over(socket);
+      ws.connect(
         {},
-        JSON.stringify({ playerId: state.userName })
-      );
+        () => {
+          socketActive = true;
+          connected = true;
+          ws.subscribe(
+            `/queue/game/${gameId}/ready`,
+            handleGameReadyReceived(updateState, state.userName)
+          );
 
-      ws.subscribe("/user/queue/errors", (frame) => {
-        console.error(frame.body);
-      });
-    });
+          ws.subscribe(
+            `/queue/game/${gameId}/piece-moved`,
+            handlePieceMovedReceived(updateState)
+          );
+
+          ws.subscribe(
+            `/queue/game/${gameId}/possible-moves`,
+            handlePossibleMovesReceived(updateState)
+          );
+
+          ws.send(
+            `/app/game/${gameId}/join`,
+            {},
+            JSON.stringify({ playerId: state.userName })
+          );
+
+          ws.subscribe("/user/queue/errors", handleError(updateState));
+        },
+        () => {
+          ws.disconnect();
+          connected = false;
+          socketActive = false;
+          clearInterval(intervalId);
+          intervalId = setInterval(() => {
+            if (!connected) {
+              startConnection();
+            }
+          }, 5000);
+        }
+      );
+    };
+
+    if (socketActive) {
+      socketActive = false;
+      ws.disconnect(startConnection);
+    } else {
+      startConnection();
+    }
   };
 
   const pieceSelected = (piece) => {

@@ -7,11 +7,12 @@ import { Container } from "./styled";
 
 import Board from "@components/Board";
 import Info from "./Info";
+import Notification from "@components/Notification";
 
 import { fetchGames, joinGame } from "@utils/upstreams";
 import withChess from "@hocs/withChess";
 
-export const ChessGame = ({ startGame, userName }) => {
+export const ChessGame = ({ startGame, userName, running, error }) => {
   const id = parseInt(useParams().id, 10);
   const [games, setGames] = useState([]);
   const [joined, setJoined] = useState(false);
@@ -24,8 +25,8 @@ export const ChessGame = ({ startGame, userName }) => {
 
   useEffect(() => {
     const player1Id = pathOr(null, ["player1", "id"])(currentGame);
-		const player2Id = pathOr(null, ["player2", "id"])(currentGame);
-		
+    const player2Id = pathOr(null, ["player2", "id"])(currentGame);
+
     const shouldJoin =
       userName !== player1Id && userName !== player2Id && currentGame;
     if (shouldJoin) {
@@ -37,14 +38,19 @@ export const ChessGame = ({ startGame, userName }) => {
 
   useEffect(() => {
     if (joined) {
-			startGame(id);
+      startGame(id);
     }
   }, [joined]);
 
-  if (!currentGame) {
+	if (error) {
+		return <Notification show={true}>BIG ERROR</Notification>;
+	}
+  else if (!currentGame) {
     return <div>Getting game data ...</div>;
   } else if (!joined) {
     return <div>Joining game ...</div>;
+  } else if (!running) {
+    return <div>Waiting for opponent ..</div>;
   } else {
     return (
       <>
