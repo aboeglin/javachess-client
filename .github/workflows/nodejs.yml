@@ -40,21 +40,17 @@ jobs:
           buildargs: SOCKET_ENDPOINT=http://www.easychess.xyz/api/ws, CHESS_SERVICE_ENDPOINT=http://www.easychess.xyz/api
 
   deploy:
+    if: github.ref == 'refs/heads/master'
     needs: build
-    runs-on: ubuntu-18.04
+    runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
-      - name: Pull image
-        uses: appleboy/ssh-action@master
+      - name: Install doctl
+        uses: digitalocean/action-doctl@v2
         with:
-          host: easychess.xyz
-          username: root
-          key: ${{ secrets.PRIVATE_KEY }}
-          script: docker pull arnaudboeglin/javachess-client:latest
-      - name: Update service
-        uses: appleboy/ssh-action@master
-        with:
-          host: easychess.xyz
-          username: root
-          key: ${{ secrets.PRIVATE_KEY }}
-          script: cd /opt && docker-compose up -d
+          token: ${{ secrets.DO_TOKEN }}
+      - name: Save DigitalOcean kubeconfig
+        env:
+          CLUSTER_NAME: ${{ secrets.CLUSTER_NAME }}
+        run: doctl kubernetes cluster kubeconfig save $CLUSTER_NAME
+      - name: Update container image
+        run: kubectl -n apps set image deployment/client "client=arnaudboeglin/javachess-client:release-${{ github.run_number }}" --record
