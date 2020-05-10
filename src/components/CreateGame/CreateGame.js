@@ -9,9 +9,9 @@ import withChess from "../../hoc/withChess";
 
 const handleCreateGame = (callback, userName) => () => {
   const endpoint =
-    process.env.GATSBY_CHESS_SERVICE_ENDPOINT || "http://localhost:8080";
+    process.env.GATSBY_CHESS_SERVICE_ENDPOINT || "http://localhost:8080/";
   axios
-    .post(`${endpoint}/games`, { userId: userName })
+    .post(`${endpoint}games`, { userId: userName })
     .then(prop("data"))
     .then(callback);
 };

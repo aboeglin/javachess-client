@@ -14,9 +14,9 @@ const handleLogOutClicked = (callback) => () => callback(null);
 
 const fetchGames = (callback) => {
   const endpoint =
-    process.env.GATSBY_CHESS_SERVICE_ENDPOINT || "http://localhost:8080";
+    process.env.GATSBY_CHESS_SERVICE_ENDPOINT || "http://localhost:8080/";
   axios
-    .get(`${endpoint}/games`)
+    .get(`${endpoint}games`)
     .then(prop("data"))
     .then(callback);
 };

@@ -12,18 +12,18 @@ import withChess from "../../hoc/withChess";
 
 const fetchGames = (callback) => {
   const endpoint =
-    process.env.GATSBY_CHESS_SERVICE_ENDPOINT || "http://localhost:8080";
+    process.env.GATSBY_CHESS_SERVICE_ENDPOINT || "http://localhost:8080/";
   axios
-    .get(`${endpoint}/games`)
+    .get(`${endpoint}games`)
     .then(prop("data"))
     .then(callback);
 };
 
 const joinGame = (gameId, userName, callback) => {
   const endpoint =
-    process.env.GATSBY_CHESS_SERVICE_ENDPOINT || "http://localhost:8080";
+    process.env.GATSBY_CHESS_SERVICE_ENDPOINT || "http://localhost:8080/";
   axios
-    .patch(`${endpoint}/games/${gameId}`, { userId: userName })
+    .patch(`${endpoint}games/${gameId}`, { userId: userName })
     .then(prop("data"))
     .then(callback);
 };
