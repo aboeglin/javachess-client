@@ -37,7 +37,7 @@ jobs:
           username: ${{ secrets.DOCKER_USER }}
           password: ${{ secrets.DOCKER_PASSWORD }}
           tags: "release-${{ github.run_number }},latest"
-          buildargs: SOCKET_ENDPOINT=http://www.easychess.xyz/api/ws, CHESS_SERVICE_ENDPOINT=http://www.easychess.xyz/api
+          buildargs: SOCKET_ENDPOINT=/api/ws, CHESS_SERVICE_ENDPOINT=/api
 
   deploy:
     if: github.ref == 'refs/heads/master'
