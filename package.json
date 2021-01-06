@@ -31,7 +31,7 @@
     "@mdx-js/react": "^1.5.1",
     "@open-sorcerers/breakpoints": "^0.0.2",
     "@rebass/forms": "^4.0.6",
-    "axios": "^0.19.2",
+    "axios": "^0.21.1",
     "bodypaint": "^0.0.2",
     "emotion-theming": "^10.0.19",
     "fluture": "^12.2.0",
