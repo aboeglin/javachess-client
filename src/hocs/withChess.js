@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useContext } from "react";
 
-import ChessContext from "../hooks/chess-context";
+import ChessContext from "@hooks/chess-context";
 
 const withChess = (Component) => {
   const Chess = (props) => {
@@ -24,7 +24,10 @@ const withChess = (Component) => {
         pieceSelected={chess.pieceSelected}
         pieceMoved={chess.pieceMoved}
         userNameSet={chess.userNameSet}
-        startGame={chess.startGame}
+				startGame={chess.startGame}
+				running={state.running}
+				error={state.error}
+				errorCode={state.errorCode}
       />
     );
   };

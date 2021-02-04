@@ -1,12 +1,12 @@
-import { SquareContainer, handleClick } from "./SquareContainer";
-import { standardComponentTest } from "../../utils/testing";
+import { Square, handleClick } from "./Square";
+import { standardComponentTest } from "@utils/testing";
 
-standardComponentTest(SquareContainer, {
+standardComponentTest(Square, {
   pieces: [],
   square: { color: "WHITE", x: "b", y: "3", highlighted: false }
 });
 
-standardComponentTest(SquareContainer, {
+standardComponentTest(Square, {
   selection: { x: "a", y: "2", color: "WHITE" },
   pieces: [{ x: "a", y: "3", type: "PAWN", color: "WHITE" }],
   square: { color: "WHITE", x: "a", y: "3", highlighted: false }

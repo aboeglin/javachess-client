@@ -2,7 +2,7 @@ import React from "react";
 
 import { curry, pipe } from "ramda";
 
-import { PieceContainer } from "./styled";
+import { Container } from "./styled";
 
 import BLACK_PAWN_IMAGE_URL from "./images/pawn-black.png";
 import BLACK_BISHOP_IMAGE_URL from "./images/bishop-black.png";
@@ -16,7 +16,7 @@ import WHITE_KNIGHT_IMAGE_URL from "./images/knight-white.png";
 import WHITE_ROOK_IMAGE_URL from "./images/rook-white.png";
 import WHITE_QUEEN_IMAGE_URL from "./images/queen-white.png";
 import WHITE_KING_IMAGE_URL from "./images/king-white.png";
-import withChess from "../../hoc/withChess";
+import withChess from "@hocs/withChess";
 
 const getImageUrl = (type, color) =>
   ({
@@ -51,7 +51,7 @@ export const Piece = ({
   pipe(
     ({ type, color }) => getImageUrl(type, color),
     url => (
-      <PieceContainer
+      <Container
         type={piece.type}
         x={piece.x}
         onClick={handlePieceClicked(
@@ -62,7 +62,7 @@ export const Piece = ({
         )}
       >
         <img src={url} />
-      </PieceContainer>
+      </Container>
     )
   )(piece);
 

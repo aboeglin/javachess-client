@@ -1,71 +1,56 @@
 import React, { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
-import axios from "axios";
-import { find, pathOr, prop, propEq } from "ramda";
+import { find, pathOr, propEq } from "ramda";
+import { fork } from "fluture";
 
 import { Container } from "./styled";
 
-import Board from "./Board";
+import Board from "@components/Board";
 import Info from "./Info";
+import Notification from "@components/Notification";
 
-import withChess from "../../hoc/withChess";
+import { fetchGames, joinGame } from "@utils/upstreams";
+import withChess from "@hocs/withChess";
 
-const fetchGames = (callback) => {
-  const endpoint =
-    process.env.GATSBY_CHESS_SERVICE_ENDPOINT || "http://localhost:8080";
-  axios
-    .get(`${endpoint}/games`)
-    .then(prop("data"))
-    .then(callback);
-};
-
-const joinGame = (gameId, userName, callback) => {
-  const endpoint =
-    process.env.GATSBY_CHESS_SERVICE_ENDPOINT || "http://localhost:8080";
-  axios
-    .patch(`${endpoint}/games/${gameId}`, { userId: userName })
-    .then(prop("data"))
-    .then(callback);
-};
-
-// const set = (callback, value) => () => callback(value);
-
-export const ChessGame = ({ startGame, userName }) => {
+export const ChessGame = ({ startGame, userName, running, error }) => {
   const id = parseInt(useParams().id, 10);
   const [games, setGames] = useState([]);
   const [joined, setJoined] = useState(false);
 
   useEffect(() => {
-    fetchGames(setGames);
+    fork(console.error)(setGames)(fetchGames());
   }, []);
 
   const currentGame = find(propEq("id", id))(games);
 
   useEffect(() => {
     const player1Id = pathOr(null, ["player1", "id"])(currentGame);
-		const player2Id = pathOr(null, ["player2", "id"])(currentGame);
-		
+    const player2Id = pathOr(null, ["player2", "id"])(currentGame);
+
     const shouldJoin =
       userName !== player1Id && userName !== player2Id && currentGame;
     if (shouldJoin) {
-      joinGame(id, userName, () => setJoined(true));
+      fork(console.error)(() => setJoined(true))(joinGame(userName, id));
     } else {
       setJoined(true);
     }
   }, [games]);
 
   useEffect(() => {
-		console.log("joined", joined);
-		console.log("gameId", id);
     if (joined) {
-			startGame(id);
+      startGame(id);
     }
   }, [joined]);
 
-  if (!currentGame) {
+	if (error) {
+		return <Notification show={true}>BIG ERROR</Notification>;
+	}
+  else if (!currentGame) {
     return <div>Getting game data ...</div>;
   } else if (!joined) {
     return <div>Joining game ...</div>;
+  } else if (!running) {
+    return <div>Waiting for opponent ..</div>;
   } else {
     return (
       <>
